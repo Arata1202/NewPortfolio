@@ -4,258 +4,19 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
+import { frontend, backend, tools } from '../Components/Skills'
+import { posts } from '../Components/Favorite'
+import { footerNavigation } from '../Components/FooterNav'
+
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ');
   }
-  
-const profile = {
-  name: 'Arata Takano',
-  email: 'ricardo.cooper@example.com',
-  avatar:
-    'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-  backgroundImage:
-    'https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-  fields: [
-    ['Phone', '(555) 123-4567'],
-    ['Email', 'ricardocooper@example.com'],
-    ['Title', 'Senior Front-End Developer'],
-    ['Team', 'Product Development'],
-    ['Location', 'San Francisco'],
-    ['Sits', 'Oasis, 4th floor'],
-    ['Salary', '$145,000'],
-    ['Birthday', 'June 8, 1990'],
-  ],
-}
-const frontend = [
-    {
-      name: 'HTML',
-      title: 'Webアプリ開発が好きなので、高頻度で使用しています。',
-      imageUrl:
-        '/images/html.jpg',
-    },
-    {
-      name: 'CSS',
-      title: 'アプリ開発やブログのカスタマイズに多用しています。',
-      imageUrl:
-        '/images/4.jpg',
-    },
-    {
-      name: 'JavaScript',
-      title: 'Vue.jsなどのフレームワークを使用する場面が多いです。',
-      imageUrl:
-        '/images/3.jpg',
-    },
-    {
-      name: 'jQuery',
-      title: 'Ajaxなどの非同期通信や、slickなどのライブラリに使用しました。',
-      imageUrl:
-        '/images/1.jpg',
-    },
-    {
-      name: 'Vue.js',
-      title: '主にインターンシップの、フロントエンド開発で使用しています。',
-      imageUrl:
-        '/images/13.jpg',
-    },
-    {
-      name: 'Vuetify',
-      title: 'インターンシップのフロントエンド開発で使用する場合が多いです。',
-      imageUrl:
-        '/images/5.jpg',
-    },
-    {
-      name: 'React',
-      title: '使用頻度は少ないですが、フロントエンドでたまに使用しています。',
-      imageUrl:
-        '/images/2.jpg',
-    },
-    {
-      name: 'Tailwind CSS',
-      title: 'インターンで習得してから便利さに気付き、多用しています。',
-      imageUrl:
-        '/images/19.jpg',
-    },
-  ]
-
-const backend = [
-    {
-      name: 'PHP',
-      title: '初めて習得した言語で、当時はPHPをメインに開発していました。',
-      imageUrl:
-        '/images/6.jpg',
-    },
-    {
-      name: 'Python',
-      title: '使用頻度は少ないですが、APIを使用したスクリプトなども記述できます。',
-      imageUrl:
-        '/images/7.jpg',
-    },
-    {
-      name: 'Laravel',
-      title: 'インターンシップのバッグエンド開発で、主に使用しています。',
-      imageUrl:
-        '/images/8.jpg',
-    },
-    {
-      name: 'Django',
-      title: 'インターンシップ応募の際に、作成したポートフォリオで採用しました。',
-      imageUrl:
-        '/images/9.jpg',
-    },
-    {
-      name: 'MySQL',
-      title: '今までの開発で、使わなかったことがあまりないほど、使用しています。',
-      imageUrl:
-        '/images/10.jpg',
-    },
-    {
-      name: 'AWS',
-      title: 'ポートフォリオをAWSのEC2にデプロイする際に使用しました。',
-      imageUrl:
-        '/images/11.jpg',
-    },
-    {
-      name: 'R',
-      title: '大学で、マーケティングデータ分析を行うために使用しました',
-      imageUrl:
-        '/images/12.jpg',
-    },
-  ]
-
-const tools = [
-    {
-      name: 'WordPress',
-      title: 'ブログの運用で使用しています。ページスピードなどにもこだわっています。',
-      imageUrl:
-        '/images/14.jpg',
-    },
-    {
-      name: 'GitHub',
-      title: 'インターンシップで何度も使用しています。主なコマンドは一通り出来ます。',
-      imageUrl:
-        '/images/15.jpg',
-    },
-    {
-      name: 'Docker',
-      title: 'デプロイ環境に合わせるために、インターンシップで使用しました。',
-      imageUrl:
-        '/images/16.jpg',
-    },
-    {
-      name: 'VSCode',
-      title: 'アプリ開発では、基本的にVSCodeを使用しています。',
-      imageUrl:
-        '/images/17.jpg',
-    },
-    {
-      name: 'SourceTree',
-      title: 'インターンシップで使用しました。ですがGitHubの方が使用頻度は高いです。',
-      imageUrl:
-        '/images/18.jpg',
-    },
-  ]
-
-  const navigation = {
-    main: [
-      { name: 'About', href: '#' },
-      { name: 'Blog', href: '#' },
-      { name: 'Jobs', href: '#' },
-      { name: 'Press', href: '#' },
-      { name: 'Accessibility', href: '#' },
-      { name: 'Partners', href: '#' },
-    ],
-    social: [
-      {
-        name: 'Instagram',
-        href: '#',
-        icon: (props: React.SVGProps<SVGSVGElement>) => (
-          <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-            <path
-              fillRule="evenodd"
-              d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-              clipRule="evenodd"
-            />
-          </svg>
-        ),
-      },
-      {
-        name: 'GitHub',
-        href: '#',
-        icon: (props: React.SVGProps<SVGSVGElement>) => (
-          <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-            <path
-              fillRule="evenodd"
-              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-              clipRule="evenodd"
-            />
-          </svg>
-        ),
-      },
-    ],
-  }
-  const posts = [
-    {
-      id: 1,
-      title: 'Boost your conversion rate',
-      href: '#',
-      description:
-        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-      imageUrl:
-        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
-      date: 'Mar 16, 2020',
-      datetime: '2020-03-16',
-      category: { title: 'Marketing', href: '#' },
-      author: {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-    },
-    {
-      id: 1,
-      title: 'Boost your conversion rate',
-      href: '#',
-      description:
-        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-      imageUrl:
-        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
-      date: 'Mar 16, 2020',
-      datetime: '2020-03-16',
-      category: { title: 'Marketing', href: '#' },
-      author: {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-    },
-    {
-      id: 1,
-      title: 'Boost your conversion rate',
-      href: '#',
-      description:
-        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
-      imageUrl:
-        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80',
-      date: 'Mar 16, 2020',
-      datetime: '2020-03-16',
-      category: { title: 'Marketing', href: '#' },
-      author: {
-        name: 'Michael Foster',
-        role: 'Co-Founder / CTO',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-    },
-  ]
-  
 
 export default function Example() {
   return (
+
+    // ナビゲーション
+
     <div className="bg-gray-800">
         <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -394,9 +155,11 @@ export default function Example() {
         </>
       )}
     </Disclosure>
+
+    {/* トップ */}
+
       <div>
       <img src="/images/engel.jpg" alt="description" />
-
       </div>
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
@@ -405,7 +168,7 @@ export default function Example() {
           </div>
           <div className="mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
             <div className="mt-6 min-w-0 flex-1 sm:hidden md:block">
-              <h1 className="truncate text-3xl font-bold text-white">{profile.name}</h1>
+              <h1 className="truncate text-3xl font-bold text-white">ArataTakano</h1>
             </div>
             <div className="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
               <button
@@ -433,6 +196,7 @@ export default function Example() {
       </div>
 
       {/* アピールエリア */}
+
       <div className="py-20 sm:py-20 bg-gray-800">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
@@ -465,6 +229,8 @@ export default function Example() {
         </div>
       </div>
     </div>
+
+    {/* サービス */}
 
     <div className="bg-gray-800 py-10 sm:py-10">
     <div className="mx-auto max-w-2xl text-center">
@@ -590,6 +356,8 @@ export default function Example() {
       </div>
     </div>
 
+    {/* スキル */}
+
     <div className="mx-auto max-w-7xl text-center">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">My Skills</h2>
@@ -653,11 +421,12 @@ export default function Example() {
             </ul>
     </div>
 
+    {/* フッター */}
     
     <footer className="bg-gray-800">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-10 lg:px-8">
         <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
-          {navigation.main.map((item) => (
+          {footerNavigation.main.map((item) => (
             <div key={item.name} className="pb-6">
               <a href={item.href} className="text-sm leading-6 text-white hover:text-gray-900">
                 {item.name}
@@ -666,7 +435,7 @@ export default function Example() {
           ))}
         </nav>
         <div className="mt-10 flex justify-center space-x-10">
-          {navigation.social.map((item) => (
+          {footerNavigation.social.map((item) => (
             <a key={item.name} href={item.href} className="text-white hover:text-gray-500">
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />

@@ -4,6 +4,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import React, { useState, useEffect } from 'react';
+import { InboxIcon, TrashIcon, UsersIcon } from '@heroicons/react/24/outline'
 import { FaGithub } from 'react-icons/fa';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -23,6 +24,30 @@ export default function Example() {
     transform: 'translateY(0)',
     transition: 'transform 0.3s',
   });
+
+  const features = [
+    {
+      name: 'マーケティング研究',
+      description:
+        'Non quo aperiam repellendus quas est est. Eos aut dolore aut ut sit nesciunt. Ex tempora quia. Sit nobis consequatur dolores incidunt.',
+      href: '#',
+      icon: InboxIcon,
+    },
+    {
+      name: 'ブログ運営',
+      description:
+        'Vero eum voluptatem aliquid nostrum voluptatem. Vitae esse natus. Earum nihil deserunt eos quasi cupiditate. A inventore et molestiae natus.',
+      href: '#',
+      icon: UsersIcon,
+    },
+    {
+      name: 'プログラミング学習',
+      description:
+        'Et quod quaerat dolorem quaerat architecto aliquam accusantium. Ex adipisci et doloremque autem quia quam. Quis eos molestiae at iure impedit.',
+      href: '#',
+      icon: TrashIcon,
+    },
+  ]
 
   const controlHeader = () => {
     if (typeof window !== 'undefined') {
@@ -74,7 +99,7 @@ export default function Example() {
                       Home
                     </a>
                     <a
-                      href="#"
+                      href="#Activities"
                       className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
                       Activities
@@ -140,7 +165,7 @@ export default function Example() {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="#Activities"
                 className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Activities
@@ -313,6 +338,31 @@ export default function Example() {
       </div>
     </div>
 
+    {/* 経験 */}
+    <div id="Activities" className="bg-gray-800 py-10 sm:py-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-20 text-center">Activities</h2>
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+            {features.map((feature) => (
+              <div key={feature.name} className="flex flex-col">
+                <dt className="font-semibold leading-7 text-white text-2xl">
+                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                  </div>
+                  {feature.name}
+                </dt>
+                <dd className="mt-5 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                  <p className="flex-auto text-white">{feature.description}</p>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </div>
+
+
     {/* サービス */}
 
     <div id='Service' className="bg-gray-800 py-10 sm:py-10">
@@ -322,7 +372,8 @@ export default function Example() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Velocity Gaze API</h1>
-          <div className="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
+          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">使用技術｜Vue.js, &nbsp;&nbsp;Laravel, &nbsp;&nbsp;Google Cloud API</h1>
+          <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>
                 Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
@@ -340,7 +391,7 @@ export default function Example() {
               href="#"
               className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Get started
+              Read More
             </a>
           </div>
         </div>
@@ -362,7 +413,8 @@ export default function Example() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Trip Pulse X</h1>
-          <div className="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
+          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">使用技術｜PHP, &nbsp;&nbsp;JavaScript, &nbsp;&nbsp;jQuery, &nbsp;&nbsp;HTML, &nbsp;&nbsp;CSS</h1>
+          <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>
                 Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
@@ -380,7 +432,7 @@ export default function Example() {
               href="#"
               className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Get started
+              Read More
             </a>
           </div>
         </div>
@@ -388,8 +440,8 @@ export default function Example() {
       <div className="relative overflow-hidden pt-16 lg:pt-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <img
-            className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
-            src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
+            className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+            src="images/Services/travel.jpg"
             alt=""
           />
           <div className="relative" aria-hidden="true">
@@ -402,7 +454,8 @@ export default function Example() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Portfolio</h1>
-          <div className="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
+          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">使用技術｜TypeScript, &nbsp;&nbsp;React, &nbsp;&nbsp;AWS Amplify</h1>
+          <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>
                 Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
@@ -420,7 +473,7 @@ export default function Example() {
               href="#"
               className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Get started
+              Read More
             </a>
           </div>
         </div>

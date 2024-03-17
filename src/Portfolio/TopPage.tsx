@@ -31,9 +31,7 @@ export default function Example() {
           transform: 'translateY(0)',
           transition: 'transform 0.3s',
         });
-      }
-      // スクロールダウン
-      if (window.scrollY > lastScrollY) {
+      } else if (window.scrollY > lastScrollY) {
         setHeaderStyle({
           transform: 'translateY(-100%)', // ヘッダーの高さに応じて調整
           transition: 'transform 0.3s',

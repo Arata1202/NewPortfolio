@@ -26,7 +26,7 @@ export default function Example() {
 
   const controlHeader = () => {
     if (typeof window !== 'undefined') {
-      if (window.scrollY === 0) {
+      if (window.scrollY < 10) {
         setHeaderStyle({
           transform: 'translateY(0)',
           transition: 'transform 0.3s',

@@ -220,21 +220,21 @@ export default function Example() {
               <img
                 src="/images/Trip/2.jpg"
                 alt=""
-                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div>
             <div className="relative w-full">
               <img
                 src="/images/Trip/1.jpg"
                 alt=""
-                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div>
             <div className="relative w-full">
               <img
                 src="/images/Trip/4.jpg"
                 alt=""
-                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div> 
           </Slider>
@@ -252,21 +252,21 @@ export default function Example() {
               <img
                 src="/images/Trip/3.jpg"
                 alt=""
-                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div>
             <div className="relative w-full">
               <img
                 src="/images/Trip/8.jpg"
                 alt=""
-                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div>
             <div className="relative w-full">
               <img
                 src="/images/Trip/9.jpg"
                 alt=""
-                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div> 
           </Slider>
@@ -284,21 +284,21 @@ export default function Example() {
               <img
                 src="/images/Trip/5.jpg"
                 alt=""
-                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div>
             <div className="relative w-full">
               <img
                 src="/images/Trip/7.jpg"
                 alt=""
-                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div>
             <div className="relative w-full">
               <img
                 src="/images/Trip/6.jpg"
                 alt=""
-                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div> 
           </Slider>
@@ -317,11 +317,51 @@ export default function Example() {
 
     <div id='Service' className="bg-gray-800 py-10 sm:py-10">
     <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-20">My Services</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-20">Services</h2>
         </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">A better workflow</h1>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Velocity Gaze API</h1>
+          <div className="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
+            <div>
+              <p>
+                Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
+                vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque
+                erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
+                semper sed amet vitae sed turpis id.
+                Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor
+                fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac
+                adipiscing egestas.
+              </p>
+            </div>
+          </div>
+          <div className="mt-10 flex">
+            <a
+              href="#"
+              className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Get started
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="relative overflow-hidden pt-16 lg:pt-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <img
+            className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+            src="images/Services/query.jpg"
+            alt=""
+          />
+          <div className="relative" aria-hidden="true">
+            <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-700 pt-[7%]" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="bg-gray-800 py-10 sm:py-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Trip Pulse X</h1>
           <div className="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>
@@ -361,7 +401,7 @@ export default function Example() {
     <div className="bg-gray-800 py-10 sm:py-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">A better workflow</h1>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Portfolio</h1>
           <div className="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>
@@ -388,48 +428,8 @@ export default function Example() {
       <div className="relative overflow-hidden pt-16 lg:pt-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <img
-            className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
-            src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
-            alt=""
-          />
-          <div className="relative" aria-hidden="true">
-            <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-700 pt-[7%]" />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="bg-gray-800 py-10 sm:py-10">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">A better workflow</h1>
-          <div className="mt-10 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
-            <div>
-              <p>
-                Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
-                vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque
-                erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-                semper sed amet vitae sed turpis id.
-                Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor
-                fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac
-                adipiscing egestas.
-              </p>
-            </div>
-          </div>
-          <div className="mt-10 flex">
-            <a
-              href="#"
-              className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              Get started
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className="relative overflow-hidden pt-16 lg:pt-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <img
-            className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
-            src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
+            className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+            src="images/Services/portfolio.jpg"
             alt=""
           />
           <div className="relative" aria-hidden="true">
@@ -443,7 +443,7 @@ export default function Example() {
     <div id="Skills" className="bg-gray-800 py-10 sm:py-10">
     <div className="mx-auto max-w-7xl text-center">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">My Skills</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Skills</h2>
         </div>
         <div className="ml-7">
             <h1 className="mt-6 text-left text-3xl font-bold tracking-tight text-white sm:text-3xl">Frontend</h1>

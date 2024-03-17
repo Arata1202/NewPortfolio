@@ -87,37 +87,37 @@ export const backend = [
         '/images/10.jpg',
     },
     {
-      name: 'AWS',
-      title: 'ポートフォリオをAWSのEC2にデプロイする際に使用しました。',
-      imageUrl:
-        '/images/11.jpg',
-    },
-    {
       name: 'R',
       title: '大学で、マーケティングデータ分析を行うために使用しました',
       imageUrl:
-        '/images/12.jpg',
+      '/images/12.jpg',
     },
   ];
-
-export const tools = [
+  
+  export const tools = [
     {
       name: 'WordPress',
       title: 'ブログの運用で使用しています。ページスピードなどにもこだわっています。',
       imageUrl:
-        '/images/14.jpg',
+      '/images/14.jpg',
     },
     {
       name: 'GitHub',
       title: 'インターンシップで何度も使用しています。主なコマンドは一通り出来ます。',
       imageUrl:
-        '/images/15.jpg',
+      '/images/15.jpg',
     },
     {
       name: 'Docker',
       title: 'デプロイ環境に合わせるために、インターンシップで使用しました。',
       imageUrl:
-        '/images/16.jpg',
+      '/images/16.jpg',
+    },
+    {
+      name: 'AWS',
+      title: 'ポートフォリオをAWSのEC2にデプロイする際に使用しました。',
+      imageUrl:
+        '/images/11.jpg',
     },
     {
       name: 'VSCode',

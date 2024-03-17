@@ -3,6 +3,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import React, { useState, useEffect } from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
@@ -16,12 +17,45 @@ function classNames(...classes: string[]) {
   }
 
 export default function Example() {
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [headerStyle, setHeaderStyle] = useState({
+    transform: 'translateY(0)',
+    transition: 'transform 0.3s',
+  });
+
+  const controlHeader = () => {
+    if (typeof window !== 'undefined') {
+      // スクロールダウン
+      if (window.scrollY > lastScrollY) {
+        setHeaderStyle({
+          transform: 'translateY(-100%)', // ヘッダーの高さに応じて調整
+          transition: 'transform 0.3s',
+        });
+      } else { // スクロールアップ
+        setHeaderStyle({
+          transform: 'translateY(0)',
+          transition: 'transform 0.3s',
+        });
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlHeader);
+
+      return () => {
+        window.removeEventListener('scroll', controlHeader);
+      };
+    }
+  }, [lastScrollY]);
   return (
 
     // ナビゲーション
 
     <div className="bg-gray-800">
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="fixed top-0 w-full z-50 bg-gray-800" style={{...headerStyle, boxShadow: '0 8px 12px -4px rgba(255, 255, 255, 0.1), 0 4px 8px -4px rgba(255, 255, 255, 0.06)'}}>
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
@@ -30,26 +64,27 @@ export default function Example() {
                 <div className="hidden lg:ml-6 lg:block">
                   <div className="flex space-x-4">
                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                    <a href="#" className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white">
-                      Dashboard
+                    <a href="/" 
+                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                      Home
                     </a>
                     <a
                       href="#"
                       className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
-                      Team
+                      Activities
                     </a>
                     <a
-                      href="#"
+                      href="#Service"
                       className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
-                      Projects
+                      Services
                     </a>
                     <a
-                      href="#"
+                      href="#Skills"
                       className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
-                      Calendar
+                      Skills
                     </a>
                   </div>
                 </div>
@@ -88,71 +123,37 @@ export default function Example() {
             </div>
           </div>
 
-          <Disclosure.Panel className="lg:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
+          <Disclosure.Panel as="nav" className="fixed top-16 w-full z-40 bg-gray-800" style={{...headerStyle, boxShadow: '0 8px 12px -4px rgba(255, 255, 255, 0.1), 0 4px 8px -4px rgba(255, 255, 255, 0.06)'}}>
+            <div className="space-y-1 px-2 pb-3 pt-1">
               {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
+                href="/"
+                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
-                Dashboard
+                Home
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="#"
                 className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
-                Team
+                Activities
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="#Service"
                 className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
-                Projects
+                Services
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
+                href="#Skills"
                 className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
-                Calendar
+                Skills
               </Disclosure.Button>
-            </div>
-            <div className="border-t border-gray-700 pb-3 pt-4">
-              <div className="flex items-center px-5">
-                <div className="flex-shrink-0">
-                  <img
-                    className="h-10 w-10 rounded-full"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div className="mt-3 space-y-1 px-2">
-                <Disclosure.Button
-                  as="a"
-                  href="#"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                >
-                  Your Profile
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as="a"
-                  href="#"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                >
-                  Settings
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as="a"
-                  href="#"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
-                >
-                  Sign out
-                </Disclosure.Button>
-              </div>
             </div>
           </Disclosure.Panel>
         </>
@@ -193,7 +194,12 @@ export default function Example() {
         </div>
         <div className='mt-10 text-white'>
               <p>
-              千葉県在住の20歳。大学で消費者行動やマーケティングについて研究しています。2023年7月に、プログラミングに興味を持ち独学を開始したがのめり込んでしまい、僅か1か月でPHPを習得。今ではJavaやPythonなど様々な言語に挑み、日々スキルアップを図っています。よろしくお願いします。
+              千葉県在住の20歳。
+              2023年7月からプログラミングを独学し、PHPを習得。
+              10月にはエンジニアのインターンシップに参加し、日々スキルアップを図っています。
+              2023年の8月には大学生活やプログラミングに関するブログを開始しました。
+              大学で学んでいるマーケティングスキルを活かして、人々のニーズを考えながら記事を執筆しています。
+              よろしくお願いします。
               </p>
             </div>
       </div>
@@ -231,7 +237,7 @@ export default function Example() {
               <h3 className="text-2xl font-semibold leading-6 text-white">
                   Travel
               </h3>
-              <p className="mt-5 text-sm leading-6 text-white">大学生時代、趣味である温泉や観光地への旅行は、私にとって単なる楽しみ以上のものでした。これらの旅行からは、計画性の強化や地理的な知識の獲得といった多くのメリットを得ました。特に、異なる場所への適応力や、未知の環境での情報収集能力は、ビジネスシーンでの新規プロジェクト対応やクライアントとのコミュニケーションにも活かされています。</p>
+              <p className="mt-5 text-sm leading-6 text-white">旅行が好きで何度も温泉地や観光スポットへ行きました。思い出ができるだけでなく、土地勘がついたり計画性が上がることなどメリットも大きかったです。ちなみに乳頭温泉郷がとても良かったので訪れてみてください。</p>
             </div>
           </div>
 
@@ -263,7 +269,7 @@ export default function Example() {
               <h3 className="text-2xl font-semibold leading-6 text-white">
                   Day Trips
               </h3>
-              <p className="mt-5 text-sm leading-6 text-white">日帰り旅行では、限られた時間の中で効率よく行動する必要がありました。これは、時間管理と計画性の重要性を教えてくれる経験でした。例えば、交通機関の選択やスケジュール調整を通じて、目的地での滞在時間を最大化しました。この能力は、プロジェクトの締め切りを守り、効率的にタスクを進める仕事の場面でも役立っています。</p>
+              <p className="mt-5 text-sm leading-6 text-white">日帰り旅行も何度も行きました。1日という限られた時間をフルに活用して、出来るだけ多くのスポットを観光していたため、1日のスケジュール管理能力が身についたと実感しています。</p>
             </div>
           </div>
 
@@ -295,7 +301,7 @@ export default function Example() {
               <h3 className="text-2xl font-semibold leading-6 text-white">
               Transportation
               </h3>
-              <p className="mt-5 text-sm leading-6 text-white">さまざまな交通手段を用いることで、柔軟性とコスト意識を養いました。たとえば、青春18切符やスカイメイトを利用することで、効率的かつ経済的な旅を実現しました。これらの経験は、リソースを最適に活用し、効果的な意思決定を行うビジネスシーンに直接応用可能です。</p>
+              <p className="mt-5 text-sm leading-6 text-white">旅行では、如何に快適かつコストを抑えて移動できるかを考えていたため、JRの青春18切符やJALのスカイメイトなどを活用することが多かったです。コスト管理能力も身についたと考えています。</p>
             </div>
             </div>
         </div>
@@ -304,7 +310,7 @@ export default function Example() {
 
     {/* サービス */}
 
-    <div className="bg-gray-800 py-10 sm:py-10">
+    <div id='Service' className="bg-gray-800 py-10 sm:py-10">
     <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-20">My Services</h2>
         </div>
@@ -429,13 +435,13 @@ export default function Example() {
     </div>
 
     {/* スキル */}
-
+    <div id="Skills" className="bg-gray-800 py-10 sm:py-10">
     <div className="mx-auto max-w-7xl text-center">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">My Skills</h2>
         </div>
         <div className="ml-7">
-            <h1 className="mt-6 text-left text-3xl font-bold tracking-tight text-white sm:text-4xl">Frontend</h1>
+            <h1 className="mt-6 text-left text-3xl font-bold tracking-tight text-white sm:text-3xl">Frontend</h1>
         </div>
         <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-17 m-6">
             {frontend.map((skill, index) => (
@@ -454,7 +460,7 @@ export default function Example() {
             ))}
             </ul>
         <div className="ml-7">
-            <h1 className="mt-6 text-left text-3xl font-bold tracking-tight text-white sm:text-4xl">Backend</h1>
+            <h1 className="mt-12 text-left text-3xl font-bold tracking-tight text-white sm:text-3xl">Backend</h1>
         </div>
         <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-17 m-6">
             {backend.map((skill, index) => (
@@ -473,7 +479,7 @@ export default function Example() {
             ))}
             </ul>
         <div className="ml-7">
-            <h1 className="mt-6 text-left text-3xl font-bold tracking-tight text-white sm:text-4xl">Tools</h1>
+            <h1 className="mt-12 text-left text-3xl font-bold tracking-tight text-white sm:text-3xl">Tools</h1>
         </div>
         <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-17 m-6">
             {tools.map((skill, index) => (
@@ -492,10 +498,11 @@ export default function Example() {
             ))}
             </ul>
     </div>
+    </div>
 
     {/* フッター */}
     
-    <footer className="bg-gray-800">
+    <footer className="bg-gray-800 z-50" style={{ boxShadow: '0 -8px 12px -4px rgba(255, 255, 255, 0.1), 0 -8px 12px -4px rgba(255, 255, 255, 0.06)' }}>
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-10 lg:px-8">
         <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
           {footerNavigation.main.map((item) => (

@@ -1,0 +1,8 @@
+.slick-dots li.slick-active button:before {
+    color: white;
+  }
+  
+  /* 非アクティブなドットのスタイル */
+  .slick-dots li button:before {
+    color: lightgrey;
+  }

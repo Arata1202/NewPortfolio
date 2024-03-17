@@ -63,6 +63,12 @@ export const backend = [
         '/images/7.jpg',
     },
     {
+      name: 'TypeScript',
+      title: 'このポートフォリオを作成する際に、バックエンドとして採用しました。',
+      imageUrl:
+        '/images/20.jpg',
+    },
+    {
       name: 'Laravel',
       title: 'インターンシップのバッグエンド開発で、主に使用しています。',
       imageUrl:

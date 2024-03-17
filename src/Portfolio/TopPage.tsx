@@ -200,42 +200,38 @@ export default function Example() {
 
       {/* アピールエリア */}
 
-      <div className="py-20 sm:py-20 bg-gray-800">
+      <div className="py-0 sm:py-0 bg-gray-800">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
-    <div className="mx-auto max-w-2xl text-center">
-      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">My Favorite</h2>
-    </div>
     <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-
-<div>
+      <div>
           <Slider {...settings}>
             <div className="relative w-full">
               <img
                 src="/images/12.jpg"
                 alt=""
-                className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div>
             <div className="relative w-full">
               <img
                 src="/images/12.jpg"
                 alt=""
-                className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div>
             <div className="relative w-full">
               <img
                 src="/images/12.jpg"
                 alt=""
-                className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div> 
           </Slider>
           <div className="group relative mt-8">
-              <h3 className="text-lg font-semibold leading-6 text-white">
+              <h3 className="text-2xl font-semibold leading-6 text-white">
                   Travel
               </h3>
-              <p className="mt-5 line-clamp-3 text-sm leading-6 text-white">ああ</p>
+              <p className="mt-5 text-sm leading-6 text-white">大学生時代、趣味である温泉や観光地への旅行は、私にとって単なる楽しみ以上のものでした。これらの旅行からは、計画性の強化や地理的な知識の獲得といった多くのメリットを得ました。特に、異なる場所への適応力や、未知の環境での情報収集能力は、ビジネスシーンでの新規プロジェクト対応やクライアントとのコミュニケーションにも活かされています。</p>
             </div>
           </div>
 
@@ -245,29 +241,29 @@ export default function Example() {
               <img
                 src="/images/12.jpg"
                 alt=""
-                className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div>
             <div className="relative w-full">
               <img
                 src="/images/12.jpg"
                 alt=""
-                className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div>
             <div className="relative w-full">
               <img
                 src="/images/12.jpg"
                 alt=""
-                className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div> 
           </Slider>
           <div className="group relative mt-8">
-              <h3 className="text-lg font-semibold leading-6 text-white">
-                  ああ
+              <h3 className="text-2xl font-semibold leading-6 text-white">
+                  Day Trips
               </h3>
-              <p className="mt-5 line-clamp-3 text-sm leading-6 text-white">ああ</p>
+              <p className="mt-5 text-sm leading-6 text-white">日帰り旅行では、限られた時間の中で効率よく行動する必要がありました。これは、時間管理と計画性の重要性を教えてくれる経験でした。例えば、交通機関の選択やスケジュール調整を通じて、目的地での滞在時間を最大化しました。この能力は、プロジェクトの締め切りを守り、効率的にタスクを進める仕事の場面でも役立っています。</p>
             </div>
           </div>
 
@@ -277,29 +273,29 @@ export default function Example() {
               <img
                 src="/images/12.jpg"
                 alt=""
-                className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div>
             <div className="relative w-full">
               <img
                 src="/images/12.jpg"
                 alt=""
-                className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div>
             <div className="relative w-full">
               <img
                 src="/images/12.jpg"
                 alt=""
-                className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div> 
           </Slider>
             <div className="group relative mt-8">
-              <h3 className="text-lg font-semibold leading-6 text-white">
-                  ああ
+              <h3 className="text-2xl font-semibold leading-6 text-white">
+              Transportation
               </h3>
-              <p className="mt-5 line-clamp-3 text-sm leading-6 text-white">ああ</p>
+              <p className="mt-5 text-sm leading-6 text-white">さまざまな交通手段を用いることで、柔軟性とコスト意識を養いました。たとえば、青春18切符やスカイメイトを利用することで、効率的かつ経済的な旅を実現しました。これらの経験は、リソースを最適に活用し、効果的な意思決定を行うビジネスシーンに直接応用可能です。</p>
             </div>
             </div>
         </div>

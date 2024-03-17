@@ -4,6 +4,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import React, { useState, useEffect } from 'react';
+import { FaGithub } from 'react-icons/fa';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
@@ -25,6 +26,12 @@ export default function Example() {
 
   const controlHeader = () => {
     if (typeof window !== 'undefined') {
+      if (window.scrollY === 0) {
+        setHeaderStyle({
+          transform: 'translateY(0)',
+          transition: 'transform 0.3s',
+        });
+      }
       // スクロールダウン
       if (window.scrollY > lastScrollY) {
         setHeaderStyle({
@@ -162,7 +169,7 @@ export default function Example() {
 
     {/* トップ */}
 
-      <div>
+      <div className='pt-10 mt-5'>
       <img src="/images/engel.jpg" alt="description" />
       </div>
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -175,20 +182,20 @@ export default function Example() {
               <h1 className="truncate text-3xl font-bold text-white">ArataTakano</h1>
             </div>
             <div className="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
-              <button
-                type="button"
-                className="inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-              >
-              <PhoneIcon className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
-                <span>GitHub</span>
-              </button>
-              <button
-                type="button"
-                className="inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-              >
-                <EnvelopeIcon className="-ml-0.5 mr-1.5 h-5 w-5  text-white" aria-hidden="true" />
-                <span>Email</span>
-              </button>
+            <a
+              href="https://github.com/Arata1202"
+              className="inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
+            >
+              <FaGithub className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
+              <span>GitHub</span>
+            </a>
+            <a
+              href="mailto:s13202200279@toyo.jp"
+              className="inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
+            >
+              <EnvelopeIcon className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
+              <span>E-mail</span>
+            </a>
             </div>
           </div>
         </div>
@@ -213,21 +220,21 @@ export default function Example() {
           <Slider {...settings}>
             <div className="relative w-full">
               <img
-                src="/images/12.jpg"
+                src="/images/Trip/2.jpg"
                 alt=""
                 className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div>
             <div className="relative w-full">
               <img
-                src="/images/12.jpg"
+                src="/images/Trip/1.jpg"
                 alt=""
                 className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div>
             <div className="relative w-full">
               <img
-                src="/images/12.jpg"
+                src="/images/Trip/4.jpg"
                 alt=""
                 className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
@@ -245,21 +252,21 @@ export default function Example() {
           <Slider {...settings}>
             <div className="relative w-full">
               <img
-                src="/images/12.jpg"
+                src="/images/Trip/3.jpg"
                 alt=""
                 className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div>
             <div className="relative w-full">
               <img
-                src="/images/12.jpg"
+                src="/images/Trip/8.jpg"
                 alt=""
                 className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div>
             <div className="relative w-full">
               <img
-                src="/images/12.jpg"
+                src="/images/Trip/9.jpg"
                 alt=""
                 className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
@@ -277,21 +284,21 @@ export default function Example() {
           <Slider {...settings}>
             <div className="relative w-full">
               <img
-                src="/images/12.jpg"
+                src="/images/Trip/5.jpg"
                 alt=""
                 className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div>
             <div className="relative w-full">
               <img
-                src="/images/12.jpg"
+                src="/images/Trip/7.jpg"
                 alt=""
                 className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </div>
             <div className="relative w-full">
               <img
-                src="/images/12.jpg"
+                src="/images/Trip/6.jpg"
                 alt=""
                 className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
@@ -503,10 +510,10 @@ export default function Example() {
     {/* フッター */}
     
     <footer className="bg-gray-800 z-50" style={{ boxShadow: '0 -8px 12px -4px rgba(255, 255, 255, 0.1), 0 -8px 12px -4px rgba(255, 255, 255, 0.06)' }}>
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-10 lg:px-8">
+      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-5 sm:py-10 lg:px-8">
         <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
           {footerNavigation.main.map((item) => (
-            <div key={item.name} className="pb-6">
+            <div key={item.name} className="pb-6 text-center">
               <a href={item.href} className="text-sm leading-6 text-white hover:text-gray-900">
                 {item.name}
               </a>

@@ -68,8 +68,10 @@ export default function Example() {
           <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div>
+                <a href="/">
                 {/* <h2 className='text-white text-4xl'>Real Portfolio</h2> */}
-                <img src="images/リアルポートフォリオ.png" alt="" className='md:w-1/2 lg:w-2/5' />
+                <img src="images/リアルポートフォリオ.png" alt="" className='md:w-1/2 lg:w-2/5 ml-2' />
+                </a>
               </div>
               <div className="flex items-center px-2 lg:px-0">
                 <div className="hidden lg:ml-6 lg:block">
@@ -404,7 +406,7 @@ export default function Example() {
               </div>
             </div>
           </div>
-          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">使用技術｜PHP, &nbsp;&nbsp;JavaScript, &nbsp;&nbsp;jQuery, &nbsp;&nbsp;HTML, &nbsp;&nbsp;CSS</h1>
+          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">使用技術｜PHP, &nbsp;&nbsp;JavaScript, &nbsp;&nbsp;jQuery, &nbsp;&nbsp;HTML, &nbsp;&nbsp;CSS, &nbsp;&nbsp;Xserver</h1>
           <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>

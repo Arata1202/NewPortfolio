@@ -13,6 +13,7 @@ import Slider from 'react-slick';
 import { frontend, backend, tools } from '../Components/Skills'
 import { footerNavigation } from '../Components/FooterNav'
 import { settings } from '../Components/Slick'
+import { interns, features } from '../Components/Activities'
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ');
@@ -25,30 +26,6 @@ export default function Example() {
     transition: 'transform 0.3s',
   });
 
-  const features = [
-    {
-      name: 'マーケティング研究',
-      description:
-        'Non quo aperiam repellendus quas est est. Eos aut dolore aut ut sit nesciunt. Ex tempora quia. Sit nobis consequatur dolores incidunt.',
-      href: '#',
-      icon: InboxIcon,
-    },
-    {
-      name: 'ブログ運営',
-      description:
-        'Vero eum voluptatem aliquid nostrum voluptatem. Vitae esse natus. Earum nihil deserunt eos quasi cupiditate. A inventore et molestiae natus.',
-      href: '#',
-      icon: UsersIcon,
-    },
-    {
-      name: 'プログラミング学習',
-      description:
-        'Et quod quaerat dolorem quaerat architecto aliquam accusantium. Ex adipisci et doloremque autem quia quam. Quis eos molestiae at iure impedit.',
-      href: '#',
-      icon: TrashIcon,
-    },
-  ]
-
   const controlHeader = () => {
     if (typeof window !== 'undefined') {
       if (window.scrollY < 30) {
@@ -58,10 +35,10 @@ export default function Example() {
         });
       } else if (window.scrollY > lastScrollY) {
         setHeaderStyle({
-          transform: 'translateY(-100%)', // ヘッダーの高さに応じて調整
+          transform: 'translateY(-100%)', 
           transition: 'transform 0.3s',
         });
-      } else { // スクロールアップ
+      } else {
         setHeaderStyle({
           transform: 'translateY(0)',
           transition: 'transform 0.3s',
@@ -90,6 +67,10 @@ export default function Example() {
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
+              <div>
+                {/* <h2 className='text-white text-4xl'>Real Portfolio</h2> */}
+                <img src="images/リアルポートフォリオ.png" alt="" className='md:w-1/2 lg:w-2/5' />
+              </div>
               <div className="flex items-center px-2 lg:px-0">
                 <div className="hidden lg:ml-6 lg:block">
                   <div className="flex space-x-4">
@@ -116,25 +97,6 @@ export default function Example() {
                     >
                       Skills
                     </a>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-1 justify-center px-2 lg:ml-6 lg:justify-end">
-                <div className="w-full max-w-lg lg:max-w-xs">
-                  <label htmlFor="search" className="sr-only">
-                    Search
-                  </label>
-                  <div className="relative">
-                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                      <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-                    </div>
-                    <input
-                      id="search"
-                      name="search"
-                      className="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
-                      placeholder="Search"
-                      type="search"
-                    />
                   </div>
                 </div>
               </div>
@@ -192,7 +154,7 @@ export default function Example() {
 
     {/* トップ */}
 
-      <div className='pt-10 mt-5'>
+      <div className='pt-10 mt-5 flex'>
       <img src="/images/engel.jpg" alt="description" />
       </div>
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -202,7 +164,7 @@ export default function Example() {
           </div>
           <div className="mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
             <div className="mt-6 min-w-0 flex-1 sm:hidden md:block">
-              <h1 className="truncate text-3xl font-bold text-white">ArataTakano</h1>
+              <h1 className="truncate text-3xl font-bold text-white">Arata Takano</h1>
             </div>
             <div className="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
             <a
@@ -335,11 +297,12 @@ export default function Example() {
             </div>
             </div>
         </div>
+        <hr className="border-b border-8 border-dashed border-gray-700 mt-20" />
       </div>
     </div>
 
     {/* 経験 */}
-    <div id="Activities" className="bg-gray-800 py-10 sm:py-10">
+    <div id="Activities" className="bg-gray-800 py-10 sm:py-10 mt-5">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
       <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-20 text-center">Activities</h2>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
@@ -347,7 +310,7 @@ export default function Example() {
             {features.map((feature) => (
               <div key={feature.name} className="flex flex-col">
                 <dt className="font-semibold leading-7 text-white text-2xl">
-                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-700">
                     <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
                   {feature.name}
@@ -358,7 +321,23 @@ export default function Example() {
               </div>
             ))}
           </dl>
+          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-1">
+            {interns.map((intern) => (
+              <div key={intern.name} className="flex flex-col mt-20">
+                <dt className="font-semibold leading-7 text-white text-2xl">
+                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-700">
+                    <intern.icon className="h-6 w-6 text-white" aria-hidden="true" />
+                  </div>
+                  {intern.name}
+                </dt>
+                <dd className="mt-5 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                  <p className="flex-auto text-white">{intern.description}</p>
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
+      <hr className="border-b border-8 border-dashed border-gray-700 mt-20" />
       </div>
     </div>
 
@@ -371,7 +350,19 @@ export default function Example() {
         </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Velocity Gaze API</h1>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Search Analytics API</h1>
+          <div className="relative overflow-hidden pt-16 lg:pt-10">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <img
+                className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+                src="images/Services/query.jpg"
+                alt=""
+              />
+              <div className="relative" aria-hidden="true">
+                <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-700 pt-[7%]" />
+              </div>
+            </div>
+          </div>
           <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">使用技術｜Vue.js, &nbsp;&nbsp;Laravel, &nbsp;&nbsp;Google Cloud API</h1>
           <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
@@ -389,22 +380,10 @@ export default function Example() {
           <div className="mt-10 flex">
             <a
               href="#"
-              className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >
               Read More
             </a>
-          </div>
-        </div>
-      </div>
-      <div className="relative overflow-hidden pt-16 lg:pt-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <img
-            className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
-            src="images/Services/query.jpg"
-            alt=""
-          />
-          <div className="relative" aria-hidden="true">
-            <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-700 pt-[7%]" />
           </div>
         </div>
       </div>
@@ -413,6 +392,18 @@ export default function Example() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Trip Pulse X</h1>
+          <div className="relative overflow-hidden pt-16 lg:pt-10">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <img
+                className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+                src="images/Services/travel.jpg"
+                alt=""
+              />
+              <div className="relative" aria-hidden="true">
+                <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-700 pt-[7%]" />
+              </div>
+            </div>
+          </div>
           <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">使用技術｜PHP, &nbsp;&nbsp;JavaScript, &nbsp;&nbsp;jQuery, &nbsp;&nbsp;HTML, &nbsp;&nbsp;CSS</h1>
           <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
@@ -428,32 +419,32 @@ export default function Example() {
             </div>
           </div>
           <div className="mt-10 flex">
-            <a
+          <a
               href="#"
-              className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >
               Read More
             </a>
           </div>
         </div>
       </div>
-      <div className="relative overflow-hidden pt-16 lg:pt-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <img
-            className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
-            src="images/Services/travel.jpg"
-            alt=""
-          />
-          <div className="relative" aria-hidden="true">
-            <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-700 pt-[7%]" />
-          </div>
-        </div>
-      </div>
     </div>
-    <div className="bg-gray-800 py-10 sm:py-10">
+    <div className="bg-gray-800 py-20 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Portfolio</h1>
+          <div className="relative overflow-hidden pt-16 lg:pt-10">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <img
+                className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+                src="images/Services/portfolio.jpg"
+                alt=""
+              />
+              <div className="relative" aria-hidden="true">
+                <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-700 pt-[7%]" />
+              </div>
+            </div>
+          </div>
           <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">使用技術｜TypeScript, &nbsp;&nbsp;React, &nbsp;&nbsp;AWS Amplify</h1>
           <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
@@ -471,29 +462,18 @@ export default function Example() {
           <div className="mt-10 flex">
             <a
               href="#"
-              className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >
               Read More
             </a>
           </div>
         </div>
-      </div>
-      <div className="relative overflow-hidden pt-16 lg:pt-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <img
-            className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
-            src="images/Services/portfolio.jpg"
-            alt=""
-          />
-          <div className="relative" aria-hidden="true">
-            <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-700 pt-[7%]" />
-          </div>
-        </div>
+        <hr className="border-b border-8 border-dashed border-gray-700 mt-20" />
       </div>
     </div>
 
     {/* スキル */}
-    <div id="Skills" className="bg-gray-800 py-10 sm:py-10">
+    <div id="Skills" className="bg-gray-800 py-0 sm:py-0">
     <div className="mx-auto max-w-7xl text-center">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Skills</h2>
@@ -560,7 +540,7 @@ export default function Example() {
 
     {/* フッター */}
     
-    <footer className="bg-gray-800 z-50" style={{ boxShadow: '0 -8px 12px -4px rgba(255, 255, 255, 0.1), 0 -8px 12px -4px rgba(255, 255, 255, 0.06)' }}>
+    <footer className="bg-gray-800 z-50 mt-20" style={{ boxShadow: '0 -8px 12px -4px rgba(255, 255, 255, 0.1), 0 -8px 12px -4px rgba(255, 255, 255, 0.06)' }}>
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-5 sm:py-10 lg:px-8">
         <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
           {footerNavigation.main.map((item) => (

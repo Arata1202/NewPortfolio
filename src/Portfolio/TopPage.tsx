@@ -68,9 +68,9 @@ export default function Example() {
           <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div>
-                <a href="https://newportfolio.at-project.link/">
+                <a href="/">
                 {/* <h2 className='text-white text-4xl'>Real Portfolio</h2> */}
-                <img src="images/リアルポートフォリオ.png" alt="" loading="lazy" className='md:w-1/2 lg:w-2/5 ml-2' />
+                <img src="images/リアルポートフォリオ.png" alt="トップページへ" loading="lazy" className='md:w-1/2 lg:w-2/5 ml-2' />
                 </a>
               </div>
               <div className="flex items-center px-2 lg:px-0">
@@ -208,7 +208,7 @@ export default function Example() {
             <div className="relative w-full">
               <img
                 src="/images/Trip/2.jpg"
-                alt=""
+                alt="画像"
                 loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
@@ -216,7 +216,7 @@ export default function Example() {
             <div className="relative w-full">
               <img
                 src="/images/Trip/1.jpg"
-                alt=""
+                alt="画像"
                 loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
@@ -224,16 +224,16 @@ export default function Example() {
             <div className="relative w-full">
               <img
                 src="/images/Trip/4.jpg"
-                alt=""
+                alt="画像"
                 loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div> 
           </Slider>
           <div className="group relative mt-8">
-              <h3 className="text-2xl font-semibold leading-6 text-white">
+              <h2 className="text-2xl font-semibold leading-6 text-white">
                   Travel
-              </h3>
+              </h2>
               <p className="mt-5 text-sm leading-6 text-white">旅行が好きで何度も温泉地や観光スポットへ行きました。思い出ができるだけでなく、土地勘がついたり計画性が上がることなどメリットも大きかったです。ちなみに乳頭温泉郷がとても良かったので訪れてみてください。</p>
             </div>
           </div>
@@ -243,7 +243,7 @@ export default function Example() {
             <div className="relative w-full">
               <img
                 src="/images/Trip/3.jpg"
-                alt=""
+                alt="画像"
                 loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
@@ -251,7 +251,7 @@ export default function Example() {
             <div className="relative w-full">
               <img
                 src="/images/Trip/8.jpg"
-                alt=""
+                alt="画像"
                 loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
@@ -259,16 +259,16 @@ export default function Example() {
             <div className="relative w-full">
               <img
                 src="/images/Trip/9.jpg"
-                alt=""
+                alt="画像"
                 loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div> 
           </Slider>
           <div className="group relative mt-8">
-              <h3 className="text-2xl font-semibold leading-6 text-white">
+              <h2 className="text-2xl font-semibold leading-6 text-white">
                   Day Trips
-              </h3>
+              </h2>
               <p className="mt-5 text-sm leading-6 text-white">日帰り旅行も何度も行きました。1日という限られた時間をフルに活用して、出来るだけ多くのスポットを観光していたため、1日のスケジュール管理能力が身についたと実感しています。</p>
             </div>
           </div>
@@ -278,7 +278,7 @@ export default function Example() {
             <div className="relative w-full">
               <img
                 src="/images/Trip/5.jpg"
-                alt=""
+                alt="画像"
                 loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
@@ -286,7 +286,7 @@ export default function Example() {
             <div className="relative w-full">
               <img
                 src="/images/Trip/7.jpg"
-                alt=""
+                alt="画像"
                 loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
@@ -294,16 +294,16 @@ export default function Example() {
             <div className="relative w-full">
               <img
                 src="/images/Trip/6.jpg"
-                alt=""
+                alt="画像"
                 loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div> 
           </Slider>
             <div className="group relative mt-8">
-              <h3 className="text-2xl font-semibold leading-6 text-white">
+              <h2 className="text-2xl font-semibold leading-6 text-white">
               Transportation
-              </h3>
+              </h2>
               <p className="mt-5 text-sm leading-6 text-white">旅行では、如何に快適かつコストを抑えて移動出来るかを考えていたため、JRの青春18切符やJALのスカイメイトなどを活用することが多かったです。コスト管理能力も身についたと考えています。</p>
             </div>
             </div>
@@ -374,14 +374,14 @@ export default function Example() {
                 className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
                 src="images/Services/query.jpg"
                 loading="lazy"
-                alt=""
+                alt="画像"
               />
               <div className="relative" aria-hidden="true">
                 <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-700 pt-[7%]" />
               </div>
             </div>
           </div>
-          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">Vue.js｜Laravel｜Google Cloud API</h1>
+          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">Vue.js｜Laravel｜Tailwind CSS｜Google Cloud API</h1>
           <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>
@@ -413,14 +413,14 @@ export default function Example() {
                 className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
                 src="images/Services/travel.jpg"
                 loading="lazy"
-                alt=""
+                alt="画像"
               />
               <div className="relative" aria-hidden="true">
                 <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-700 pt-[7%]" />
               </div>
             </div>
           </div>
-          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">HTML｜CSS｜PHP｜JavaScript｜jQuery｜FTP</h1>
+          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">HTML｜CSS｜PHP｜JavaScript｜jQuery｜MySQL｜FTP</h1>
           <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>
@@ -452,7 +452,7 @@ export default function Example() {
               <img
                 className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
                 src="images/Services/portfolio.jpg"
-                alt=""
+                alt="画像"
                 loading="lazy"
               />
               <div className="relative" aria-hidden="true">
@@ -460,7 +460,7 @@ export default function Example() {
               </div>
             </div>
           </div>
-          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">TypeScript｜React.js｜AWS Amplify</h1>
+          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">TypeScript｜React.js｜Tailwind CSS｜AWS Amplify</h1>
           <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>
@@ -498,7 +498,7 @@ export default function Example() {
             {frontend.map((skill, index) => (
                 <li key={index} className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
                     <div className="flex flex-1 flex-col p-3 bg-gray-700">
-                        <img className="mx-auto h-20 w-20 flex-shrink-0 rounded-full" src={skill.imageUrl} alt="" loading="lazy" />
+                        <img className="mx-auto h-20 w-20 flex-shrink-0 rounded-full" src={skill.imageUrl} alt="画像" loading="lazy" />
                         <h3 className="mt-2 mb-1 text-sm font-medium text-white text-lg">{skill.name}</h3>
                         <p className="text-sm text-white text-left">{skill.title}</p>
                     </div>
@@ -512,7 +512,7 @@ export default function Example() {
             {backend.map((skill, index) => (
                 <li key={index} className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
                     <div className="flex flex-1 flex-col p-3 bg-gray-700">
-                        <img className="mx-auto h-20 w-20 flex-shrink-0 rounded-full" src={skill.imageUrl} alt="" loading="lazy" />
+                        <img className="mx-auto h-20 w-20 flex-shrink-0 rounded-full" src={skill.imageUrl} alt="画像" loading="lazy" />
                         <h3 className="mt-2 mb-1 text-sm font-medium text-white text-lg">{skill.name}</h3>
                         <p className="text-sm text-white text-left">{skill.title}</p>
                     </div>
@@ -526,7 +526,7 @@ export default function Example() {
             {tools.map((skill, index) => (
                 <li key={index} className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
                     <div className="flex flex-1 flex-col p-3 bg-gray-700">
-                        <img className="mx-auto h-20 w-20 flex-shrink-0 rounded-full" src={skill.imageUrl} alt="" loading="lazy" />
+                        <img className="mx-auto h-20 w-20 flex-shrink-0 rounded-full" src={skill.imageUrl} alt="画像" loading="lazy" />
                         <h3 className="mt-2 mb-1 text-sm font-medium text-white text-lg">{skill.name}</h3>
                         <p className="text-sm text-white text-left">{skill.title}</p>
                     </div>

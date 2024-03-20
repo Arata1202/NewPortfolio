@@ -36,7 +36,7 @@ export const frontend = [
         '/images/Skills/5.jpg',
     },
     {
-      name: 'React',
+      name: 'React.js',
       title: '使用頻度は少ないですが、フロントエンドでたまに使用しています。',
       imageUrl:
         '/images/Skills/2.jpg',

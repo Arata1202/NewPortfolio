@@ -1,4 +1,4 @@
-import { InboxIcon, TrashIcon, UsersIcon, CodeBracketSquareIcon, PencilSquareIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
+import { InboxIcon, CodeBracketSquareIcon, PencilSquareIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
 
 export const features = [
     {

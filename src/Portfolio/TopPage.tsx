@@ -68,9 +68,9 @@ export default function Example() {
           <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div>
-                <a href="/">
+                <a href="https://newportfolio.at-project.link/">
                 {/* <h2 className='text-white text-4xl'>Real Portfolio</h2> */}
-                <img src="images/リアルポートフォリオ.png" alt="" className='md:w-1/2 lg:w-2/5 ml-2' />
+                <img src="images/リアルポートフォリオ.png" alt="" loading="lazy" className='md:w-1/2 lg:w-2/5 ml-2' />
                 </a>
               </div>
               <div className="flex items-center px-2 lg:px-0">
@@ -157,12 +157,12 @@ export default function Example() {
     {/* トップ */}
 
       <div className='pt-10 mt-5 flex'>
-      <img src="/images/engel.jpg" alt="description" />
+      <img src="/images/engel.jpg" alt="description" loading="lazy" />
       </div>
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
           <div className="flex">
-            <img className="h-24 w-24 rounded-full ring-4 ring-white sm:h-40 sm:w-40" src="/images/face.jpg" alt="" />
+            <img className="h-24 w-24 rounded-full ring-4 ring-white sm:h-40 sm:w-40" src="/images/face.jpg" alt="" loading="lazy" />
           </div>
           <div className="mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
             <div className="mt-6 min-w-0 flex-1 sm:hidden md:block">
@@ -209,6 +209,7 @@ export default function Example() {
               <img
                 src="/images/Trip/2.jpg"
                 alt=""
+                loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div>
@@ -216,6 +217,7 @@ export default function Example() {
               <img
                 src="/images/Trip/1.jpg"
                 alt=""
+                loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div>
@@ -223,6 +225,7 @@ export default function Example() {
               <img
                 src="/images/Trip/4.jpg"
                 alt=""
+                loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div> 
@@ -241,6 +244,7 @@ export default function Example() {
               <img
                 src="/images/Trip/3.jpg"
                 alt=""
+                loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div>
@@ -248,6 +252,7 @@ export default function Example() {
               <img
                 src="/images/Trip/8.jpg"
                 alt=""
+                loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div>
@@ -255,6 +260,7 @@ export default function Example() {
               <img
                 src="/images/Trip/9.jpg"
                 alt=""
+                loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div> 
@@ -273,6 +279,7 @@ export default function Example() {
               <img
                 src="/images/Trip/5.jpg"
                 alt=""
+                loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div>
@@ -280,6 +287,7 @@ export default function Example() {
               <img
                 src="/images/Trip/7.jpg"
                 alt=""
+                loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div>
@@ -287,6 +295,7 @@ export default function Example() {
               <img
                 src="/images/Trip/6.jpg"
                 alt=""
+                loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
               />
             </div> 
@@ -364,6 +373,7 @@ export default function Example() {
               <img
                 className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
                 src="images/Services/query.jpg"
+                loading="lazy"
                 alt=""
               />
               <div className="relative" aria-hidden="true">
@@ -402,6 +412,7 @@ export default function Example() {
               <img
                 className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
                 src="images/Services/travel.jpg"
+                loading="lazy"
                 alt=""
               />
               <div className="relative" aria-hidden="true">
@@ -442,6 +453,7 @@ export default function Example() {
                 className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
                 src="images/Services/portfolio.jpg"
                 alt=""
+                loading="lazy"
               />
               <div className="relative" aria-hidden="true">
                 <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-700 pt-[7%]" />
@@ -480,62 +492,47 @@ export default function Example() {
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Skills</h2>
         </div>
         <div className="ml-7">
-            <h1 className="mt-6 text-left text-3xl font-bold tracking-tight text-white sm:text-3xl">Frontend</h1>
+            <h2 className="mt-6 text-left text-3xl font-bold tracking-tight text-white sm:text-3xl">Frontend</h2>
         </div>
         <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-17 m-6">
             {frontend.map((skill, index) => (
-                <li
-                key={index}  // ここで一意のキーを提供します。もし `name` が一意なら `key={skill.name}` としても良い
-                className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow"
-                >
-                <div className="flex flex-1 flex-col p-3 bg-gray-700">
-                    <img className="mx-auto h-20 w-20 flex-shrink-0 rounded-full" src={skill.imageUrl} alt="" />
-                    <h3 className="mt-2 text-sm font-medium text-white text-lg">{skill.name}</h3>
-                    <dl className="mt-1 flex flex-grow flex-col justify-between">
-                    <dd className="text-sm text-white text-left">{skill.title}</dd>
-                    </dl>
-                </div>
+                <li key={index} className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+                    <div className="flex flex-1 flex-col p-3 bg-gray-700">
+                        <img className="mx-auto h-20 w-20 flex-shrink-0 rounded-full" src={skill.imageUrl} alt="" loading="lazy" />
+                        <h3 className="mt-2 mb-1 text-sm font-medium text-white text-lg">{skill.name}</h3>
+                        <p className="text-sm text-white text-left">{skill.title}</p>
+                    </div>
                 </li>
             ))}
-            </ul>
+        </ul>
         <div className="ml-7">
-            <h1 className="mt-12 text-left text-3xl font-bold tracking-tight text-white sm:text-3xl">Backend</h1>
+            <h2 className="mt-12 text-left text-3xl font-bold tracking-tight text-white sm:text-3xl">Backend</h2>
         </div>
         <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-17 m-6">
             {backend.map((skill, index) => (
-                <li
-                key={index}  // ここで一意のキーを提供します。もし `name` が一意なら `key={skill.name}` としても良い
-                className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow"
-                >
-                <div className="flex flex-1 flex-col p-3 bg-gray-700">
-                    <img className="mx-auto h-20 w-20 flex-shrink-0 rounded-full" src={skill.imageUrl} alt="" />
-                    <h3 className="mt-2 text-sm font-medium text-white text-lg">{skill.name}</h3>
-                    <dl className="mt-1 flex flex-grow flex-col justify-between">
-                    <dd className="text-sm text-white text-left">{skill.title}</dd>
-                    </dl>
-                </div>
+                <li key={index} className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+                    <div className="flex flex-1 flex-col p-3 bg-gray-700">
+                        <img className="mx-auto h-20 w-20 flex-shrink-0 rounded-full" src={skill.imageUrl} alt="" loading="lazy" />
+                        <h3 className="mt-2 mb-1 text-sm font-medium text-white text-lg">{skill.name}</h3>
+                        <p className="text-sm text-white text-left">{skill.title}</p>
+                    </div>
                 </li>
             ))}
-            </ul>
+        </ul>
         <div className="ml-7">
-            <h1 className="mt-12 text-left text-3xl font-bold tracking-tight text-white sm:text-3xl">Tools</h1>
+            <h2 className="mt-12 text-left text-3xl font-bold tracking-tight text-white sm:text-3xl">Tools</h2>
         </div>
         <ul role="list" className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-17 m-6">
             {tools.map((skill, index) => (
-                <li
-                key={index}  // ここで一意のキーを提供します。もし `name` が一意なら `key={skill.name}` としても良い
-                className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow"
-                >
-                <div className="flex flex-1 flex-col p-3 bg-gray-700">
-                    <img className="mx-auto h-20 w-20 flex-shrink-0 rounded-full" src={skill.imageUrl} alt="" />
-                    <h3 className="mt-2 text-sm font-medium text-white text-lg">{skill.name}</h3>
-                    <dl className="mt-1 flex flex-grow flex-col justify-between">
-                    <dd className="text-sm text-white text-left">{skill.title}</dd>
-                    </dl>
-                </div>
+                <li key={index} className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
+                    <div className="flex flex-1 flex-col p-3 bg-gray-700">
+                        <img className="mx-auto h-20 w-20 flex-shrink-0 rounded-full" src={skill.imageUrl} alt="" loading="lazy" />
+                        <h3 className="mt-2 mb-1 text-sm font-medium text-white text-lg">{skill.name}</h3>
+                        <p className="text-sm text-white text-left">{skill.title}</p>
+                    </div>
                 </li>
             ))}
-            </ul>
+        </ul>
     </div>
     </div>
 

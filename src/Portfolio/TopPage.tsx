@@ -189,7 +189,7 @@ export default function Example() {
         <div className='mt-10 text-white'>
               <p>
               千葉県在住の20歳。
-              2023年7月からプログラミングを独学し、PHPを習得。
+              2023年7月からプログラミングを独学し、１ヶ月でPHPを習得。
               10月にはエンジニアのインターンシップに参加し、日々スキルアップを図っています。
               2023年の8月には大学生活やプログラミングに関するブログを開始しました。
               大学で学んでいるマーケティングスキルを活かして、人々のニーズを考えながら記事を執筆しています。
@@ -295,7 +295,7 @@ export default function Example() {
               <h3 className="text-2xl font-semibold leading-6 text-white">
               Transportation
               </h3>
-              <p className="mt-5 text-sm leading-6 text-white">旅行では、如何に快適かつコストを抑えて移動できるかを考えていたため、JRの青春18切符やJALのスカイメイトなどを活用することが多かったです。コスト管理能力も身についたと考えています。</p>
+              <p className="mt-5 text-sm leading-6 text-white">旅行では、如何に快適かつコストを抑えて移動出来るかを考えていたため、JRの青春18切符やJALのスカイメイトなどを活用することが多かったです。コスト管理能力も身についたと考えています。</p>
             </div>
             </div>
         </div>
@@ -320,6 +320,9 @@ export default function Example() {
                 <dd className="mt-5 flex flex-auto flex-col text-base leading-7 text-gray-600">
                   <p className="flex-auto text-white">{feature.description}</p>
                 </dd>
+                <dd className="mt-5 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                  <p className="flex-auto text-white text-1xl text-bold">{feature.description_2}</p>
+                </dd>
               </div>
             ))}
           </dl>
@@ -334,6 +337,9 @@ export default function Example() {
                 </dt>
                 <dd className="mt-5 flex flex-auto flex-col text-base leading-7 text-gray-600">
                   <p className="flex-auto text-white">{intern.description}</p>
+                </dd>
+                <dd className="mt-5 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                  <p className="flex-auto text-white text-1xl text-bold">{intern.description_2}</p>
                 </dd>
               </div>
             ))}
@@ -352,8 +358,8 @@ export default function Example() {
         </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Search Analytics API</h1>
-          <div className="relative overflow-hidden pt-16 lg:pt-10">
+          <h1 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-2xl">Search Analytics API</h1>
+          <div className="relative overflow-hidden pt-5 lg:pt-10">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <img
                 className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
@@ -365,17 +371,14 @@ export default function Example() {
               </div>
             </div>
           </div>
-          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">使用技術｜Vue.js, &nbsp;&nbsp;Laravel, &nbsp;&nbsp;Google Cloud API</h1>
+          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">Vue.js｜Laravel｜Google Cloud API</h1>
           <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>
-                Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
-                vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque
-                erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-                semper sed amet vitae sed turpis id.
-                Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor
-                fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac
-                adipiscing egestas.
+              ブログの運用をさらに便利にするアプリケーションを開発しました。
+              このアプリケーションでは、検索パフォーマンスやページスピード、お問い合わせなどを一括で管理することが出来ます。
+              本来であれば異なるブラウザで確認する必要があるため、作業効率がさらに向上します。
+              フレームワークはインターンで学習したLaravelとVue.jsを採用し、デプロイ先にはAWS EC2を採用しました。
               </p>
             </div>
           </div>
@@ -393,8 +396,8 @@ export default function Example() {
     <div className="bg-gray-800 py-10 sm:py-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Trip Pulse X</h1>
-          <div className="relative overflow-hidden pt-16 lg:pt-10">
+          <h1 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-2xl">Trip Pulse X</h1>
+          <div className="relative overflow-hidden pt-5 lg:pt-10">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <img
                 className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
@@ -406,17 +409,15 @@ export default function Example() {
               </div>
             </div>
           </div>
-          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">使用技術｜PHP, &nbsp;&nbsp;JavaScript, &nbsp;&nbsp;jQuery, &nbsp;&nbsp;HTML, &nbsp;&nbsp;CSS, &nbsp;&nbsp;Xserver</h1>
+          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">HTML｜CSS｜PHP｜JavaScript｜jQuery｜FTP</h1>
           <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>
-                Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
-                vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque
-                erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-                semper sed amet vitae sed turpis id.
-                Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor
-                fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac
-                adipiscing egestas.
+                私は旅行が好きなので、
+                旅行好きユーザーが旅行に関する情報のみを共有するアプリケーションを開発しました。
+                都道府県名や観光地名による検索や投稿機能だけでなく、コメント機能でコミュニケーションを取ることも出来ます。
+                またAjaxによるいいね機能なども実装しており、リアルタイムでいいね数を取得することなども出来ます。
+                JavaScriptによるバリデーションチェックや、投稿内容・ユーザー情報のCRUD機能など、細部まで拘って実装しています。
               </p>
             </div>
           </div>
@@ -434,8 +435,8 @@ export default function Example() {
     <div className="bg-gray-800 py-20 sm:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Portfolio</h1>
-          <div className="relative overflow-hidden pt-16 lg:pt-10">
+          <h1 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-2xl">Portfolio</h1>
+          <div className="relative overflow-hidden pt-5 lg:pt-10">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <img
                 className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
@@ -447,17 +448,15 @@ export default function Example() {
               </div>
             </div>
           </div>
-          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">使用技術｜TypeScript, &nbsp;&nbsp;React, &nbsp;&nbsp;AWS Amplify</h1>
+          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">TypeScript｜React.js｜AWS Amplify</h1>
           <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>
-                Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet
-                vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque
-                erat velit. Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris
-                semper sed amet vitae sed turpis id.
-                Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor
-                fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac
-                adipiscing egestas.
+              React.js, TypeScriptの学習も兼ねてこのポートフォリオを作成しました。
+              CSSにはTailwindCSSを採用しており、デザインへの拘りや管理のしやすさにも気を遣っています。
+              また、PageSpeedInsightによるパフォーマンスの分析を行い、最適化も行いました。
+              デプロイ先にはAWS Amplifyを採用しました。
+              サーバー側の管理が不要で、GitHubのリポジトリ管理だけで済むため、大変便利に感じています。
               </p>
             </div>
           </div>

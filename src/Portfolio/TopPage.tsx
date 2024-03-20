@@ -394,10 +394,18 @@ export default function TopPage() {
           </div>
           <div className="mt-10 flex">
             <a
-              href="#"
+              href="SearchPage"
               className="rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >
               Read More
+            </a>
+            <a
+              target='branck'
+              href="https://github.com/Arata1202/BlogAnalyticsAPI"
+              className="ml-5 inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
+            >
+              <FaGithub className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
+              <span>GitHub</span>
             </a>
           </div>
         </div>
@@ -434,11 +442,19 @@ export default function TopPage() {
           </div>
           <div className="mt-10 flex">
           <a
-              href="#"
+              href="TravelPage"
               className="rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >
               Read More
-            </a>
+          </a>
+          <a
+              target='branck'
+              href="https://github.com/Arata1202/TripPulseSNS"
+              className="ml-5 inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
+            >
+              <FaGithub className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
+              <span>GitHub</span>
+          </a>
           </div>
         </div>
       </div>
@@ -474,11 +490,19 @@ export default function TopPage() {
           </div>
           <div className="mt-10 flex">
             <a
-              href="#"
+              href="PortfolioPage"
               className="rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >
               Read More
             </a>
+            <a
+              target='branck'
+              href="https://github.com/Arata1202/NewPortfolio"
+              className="ml-5 inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
+            >
+              <FaGithub className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
+              <span>GitHub</span>
+          </a>
           </div>
         </div>
         <hr className="border-b border-8 border-dashed border-gray-700 mt-20" />

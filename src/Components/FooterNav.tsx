@@ -1,7 +1,7 @@
 export const footerNavigation = {
     main: [
       { name: 'Home', href: '/' },
-      { name: 'Activities', href: '#' },
+      { name: 'Activities', href: '#Activities' },
       { name: 'Services', href: '#Service' },
       { name: 'Skills', href: '#Skills' },
     ],

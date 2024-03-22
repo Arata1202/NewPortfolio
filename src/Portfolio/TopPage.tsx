@@ -1,4 +1,4 @@
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/20/solid'
+import { EnvelopeIcon, PhoneIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
@@ -57,6 +57,8 @@ export default function TopPage() {
       };
     }
   }, [lastScrollY]);
+
+  const [agreed, setAgreed] = useState(false)
   return (
 
     // ナビゲーション
@@ -166,7 +168,7 @@ export default function TopPage() {
           </div>
           <div className="mt-6 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
             <div className="mt-6 min-w-0 flex-1 sm:hidden md:block">
-              <h1 className="truncate text-3xl font-bold text-white">Arata Takano</h1>
+              <h1 className="truncate text-3xl font-bold text-white">Arata Takano（ 高野 新 ）</h1>
             </div>
             <div className="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
             <a
@@ -188,11 +190,11 @@ export default function TopPage() {
         </div>
         <div className='mt-10 text-white'>
               <p>
-              千葉県在住の20歳。
+              千葉県在住の20歳（2003年4月20日生まれ）。
               2023年7月からプログラミングを独学し、１ヶ月でPHPを習得。
-              10月にはエンジニアのインターンシップに参加し、日々スキルアップを図っています。
-              2023年の8月には大学生活やプログラミングに関するブログを開始しました。
-              大学で学んでいるマーケティングスキルを活かして、人々のニーズを考えながら記事を執筆しています。
+              10月からはエンジニアのインターンシップに参加し、日々スキルアップを図っています。
+              2023年の8月には、大学生活やプログラミングに関するブログを開始しました。
+              大学で学んでいるマーケティングスキルを活かして、人々のニーズやSEOを考えながら記事を執筆しています。
               よろしくお願いします。
               </p>
             </div>
@@ -232,9 +234,9 @@ export default function TopPage() {
           </Slider>
           <div className="group relative mt-8">
               <h2 className="text-2xl font-semibold leading-6 text-white">
-                  Travel
+                  旅行
               </h2>
-              <p className="mt-5 text-sm leading-6 text-white">旅行が好きで何度も温泉地や観光スポットへ行きました。思い出ができるだけでなく、土地勘がついたり計画性が上がることなどメリットも大きかったです。ちなみに乳頭温泉郷がとても良かったので訪れてみてください。</p>
+              <p className="mt-5 text-sm leading-6 text-white">旅行が好きで何度も温泉地や観光スポットへ行きました。思い出ができるだけでなく、土地勘や計画性の向上、コスト管理能力の上昇など得られるメリットも大きかったです。</p>
             </div>
           </div>
 
@@ -250,33 +252,6 @@ export default function TopPage() {
             </div>
             <div className="relative w-full">
               <img
-                src="/images/Trip/8.jpg"
-                alt="画像"
-                loading="lazy"
-                className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
-              />
-            </div>
-            <div className="relative w-full">
-              <img
-                src="/images/Trip/9.jpg"
-                alt="画像"
-                loading="lazy"
-                className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
-              />
-            </div> 
-          </Slider>
-          <div className="group relative mt-8">
-              <h2 className="text-2xl font-semibold leading-6 text-white">
-                  Day Trips
-              </h2>
-              <p className="mt-5 text-sm leading-6 text-white">日帰り旅行も何度も行きました。1日という限られた時間をフルに活用して、出来るだけ多くのスポットを観光していたため、1日のスケジュール管理能力が身についたと実感しています。</p>
-            </div>
-          </div>
-
-          <div>
-          <Slider {...settings}>
-            <div className="relative w-full">
-              <img
                 src="/images/Trip/5.jpg"
                 alt="画像"
                 loading="lazy"
@@ -285,7 +260,26 @@ export default function TopPage() {
             </div>
             <div className="relative w-full">
               <img
-                src="/images/Trip/7.jpg"
+                src="/images/Trip/8.jpg"
+                alt="画像"
+                loading="lazy"
+                className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
+              />
+            </div>
+          </Slider>
+          <div className="group relative mt-8">
+              <h2 className="text-2xl font-semibold leading-6 text-white">
+                  ドライブ
+              </h2>
+              <p className="mt-5 text-sm leading-6 text-white">レンタカーなどを使ってドライブすることも好きです。またドライブだけでなく、新幹線や飛行機に乗ってのんびり旅をすることも好きです。</p>
+            </div>
+          </div>
+
+          <div>
+          <Slider {...settings}>
+            <div className="relative w-full">
+              <img
+                src="/images/Trip/desk1.jpg"
                 alt="画像"
                 loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
@@ -293,7 +287,15 @@ export default function TopPage() {
             </div>
             <div className="relative w-full">
               <img
-                src="/images/Trip/6.jpg"
+                src="/images/Trip/desk2.jpg"
+                alt="画像"
+                loading="lazy"
+                className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
+              />
+            </div>
+            <div className="relative w-full">
+              <img
+                src="/images/Trip/desk3.jpg"
                 alt="画像"
                 loading="lazy"
                 className="aspect-[13/9] w-full bg-gray-100 object-cover sm:aspect-[13/9] lg:aspect-[13/9]"
@@ -302,9 +304,9 @@ export default function TopPage() {
           </Slider>
             <div className="group relative mt-8">
               <h2 className="text-2xl font-semibold leading-6 text-white">
-              Transportation
+                    ゲーム
               </h2>
-              <p className="mt-5 text-sm leading-6 text-white">旅行では、如何に快適かつコストを抑えて移動出来るかを考えていたため、JRの青春18切符やJALのスカイメイトなどを活用することが多かったです。コスト管理能力も身についたと考えています。</p>
+              <p className="mt-5 text-sm leading-6 text-white">暇な日は自宅でゲームを楽しんでいます。また部屋をカスタマイズすることも好きで、そのおかげでプログラミングも捗っています。</p>
             </div>
             </div>
         </div>
@@ -315,13 +317,13 @@ export default function TopPage() {
     {/* 経験 */}
     <div id="Activities" className="bg-gray-800 py-10 sm:py-10 mt-5">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-20 text-center">Activities</h2>
+      <h2 className="mt-10 text-3xl font-bold tracking-tight text-white sm:text-4xl mb-20 text-center">Activities</h2>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
             {features.map((feature) => (
               <div key={feature.name} className="flex flex-col">
                 <dt className="font-semibold leading-7 text-white text-2xl">
-                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-700">
+                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
                     <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
                   {feature.name}
@@ -339,7 +341,7 @@ export default function TopPage() {
             {interns.map((intern) => (
               <div key={intern.name} className="flex flex-col mt-20">
                 <dt className="font-semibold leading-7 text-white text-2xl">
-                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-gray-700">
+                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
                     <intern.icon className="h-6 w-6 text-white" aria-hidden="true" />
                   </div>
                   {intern.name}
@@ -363,58 +365,20 @@ export default function TopPage() {
 
     <div id='Service' className="bg-gray-800 py-10 sm:py-10">
     <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-20">Services</h2>
+          <h2 className="mt-10 text-3xl font-bold tracking-tight text-white sm:text-4xl">Services</h2>
         </div>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-          <h1 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-2xl">Search Analytics API</h1>
-          <div className="relative overflow-hidden pt-5 lg:pt-10">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <img
-                className="mb-[-1%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
-                src="images/Services/query.jpg"
-                loading="lazy"
-                alt="画像"
-              />
-              <div className="relative" aria-hidden="true">
-                <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-700 pt-[7%]" />
-              </div>
-            </div>
-          </div>
-          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">Vue.js｜Laravel｜Tailwind CSS｜Google Cloud API</h1>
-          <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
-            <div>
-              <p>
-              ブログの運用をさらに便利にするアプリケーションを開発しました。
-              このアプリケーションでは、検索パフォーマンスやページスピード、お問い合わせなどを一括で管理することが出来ます。
-              本来であれば異なるブラウザで確認する必要があるため、作業効率がさらに向上します。
-              フレームワークはインターンで学習したLaravelとVue.jsを採用し、デプロイ先にはAWS EC2を採用しました。
-              </p>
-            </div>
-          </div>
-          <div className="mt-10 flex">
-            <a
-              href="SearchPage"
-              className="rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
-            >
-              Read More
-            </a>
-            <a
-              target='branck'
-              href="https://github.com/Arata1202/BlogAnalyticsAPI"
-              className="ml-5 inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
-            >
-              <FaGithub className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
-              <span>GitHub</span>
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
-    <div className="bg-gray-800 py-10 sm:py-10">
+    <div className="bg-gray-800 py-0 sm:py-10">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
           <h1 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-2xl">Trip Pulse X</h1>
+          <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
+            <div>
+              <p>
+                ※ インターンシップ応募の際に作成
+              </p>
+            </div>
+          </div>
           <div className="relative overflow-hidden pt-5 lg:pt-10">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <img
@@ -432,20 +396,25 @@ export default function TopPage() {
           <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>
-                私は旅行が好きなので、
+                旅行が好きなので、
                 旅行好きユーザーが旅行に関する情報のみを共有するアプリケーションを開発しました。
                 都道府県名や観光地名による検索や投稿機能だけでなく、コメント機能でコミュニケーションを取ることも出来ます。
                 またAjaxによるいいね機能なども実装しており、リアルタイムでいいね数を取得することなども出来ます。
                 JavaScriptによるバリデーションチェックや、投稿内容・ユーザー情報のCRUD機能など、細部まで拘って実装しています。
               </p>
+              <br />
+              <p>
+                メールアドレス：guest@guest.com, パスワード:Guest123 でログイン可能です。
+              </p>
             </div>
           </div>
           <div className="mt-10 flex">
           <a
-              href="TravelPage"
+              target='brank'
+              href="https://sns.aratasportfolio.com/Pages/Auth/login-1.php"
               className="rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >
-              Read More
+              Trip Pulse X
           </a>
           <a
               target='branck'
@@ -489,16 +458,16 @@ export default function TopPage() {
             </div>
           </div>
           <div className="mt-10 flex">
-            <a
+            {/* <a
               href="PortfolioPage"
               className="rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >
               Read More
-            </a>
+            </a> */}
             <a
               target='branck'
               href="https://github.com/Arata1202/NewPortfolio"
-              className="ml-5 inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
+              className="inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >
               <FaGithub className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
               <span>GitHub</span>
@@ -510,10 +479,10 @@ export default function TopPage() {
     </div>
 
     {/* スキル */}
-    <div id="Skills" className="bg-gray-800 py-0 sm:py-0">
-    <div className="mx-auto max-w-7xl text-center">
+    <div id="Skills" className="bg-gray-800 py-0 sm:py-10">
+    <div className="mx-auto max-w-7xl text-center px-6 lg:px-8">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Skills</h2>
+          <h2 className="mt-10 text-3xl font-bold tracking-tight text-white sm:text-4xl">Skills</h2>
         </div>
         <div className="ml-7">
             <h2 className="mt-6 text-left text-3xl font-bold tracking-tight text-white sm:text-3xl">Frontend</h2>
@@ -557,7 +526,119 @@ export default function TopPage() {
                 </li>
             ))}
         </ul>
+        <hr className="border-b border-8 border-dashed border-gray-700 mt-20" />
     </div>
+    </div>
+
+    {/* 問い合わせ */}
+
+    <div className="isolate bg-gray-800 px-6 py-10 sm:py-10 lg:px-8">
+      <div
+        className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
+        aria-hidden="true"
+      >
+      </div>
+      <div className="mx-auto max-w-2xl text-center">
+        <h2 className="mt-6 text-3xl font-bold tracking-tight text-white sm:text-4xl">Contact</h2>
+        <p className="mt-2 text-lg leading-8 text-white">
+        </p>
+      </div>
+      <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+          <div>
+            <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-white">
+              First name
+            </label>
+            <div className="mt-2.5">
+              <input
+                type="text"
+                name="first-name"
+                id="first-name"
+                autoComplete="given-name"
+                className="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-3 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="last-name" className="block text-sm font-semibold leading-6 text-white">
+              Last name
+            </label>
+            <div className="mt-2.5">
+              <input
+                type="text"
+                name="last-name"
+                id="last-name"
+                autoComplete="family-name"
+                className="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-3 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div className="sm:col-span-2">
+            <label htmlFor="company" className="block text-sm font-semibold leading-6 text-white">
+              Company
+            </label>
+            <div className="mt-2.5">
+              <input
+                type="text"
+                name="company"
+                id="company"
+                autoComplete="organization"
+                className="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-3 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div className="sm:col-span-2">
+            <label htmlFor="email" className="block text-sm font-semibold leading-6 text-white">
+              Email
+            </label>
+            <div className="mt-2.5">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                autoComplete="email"
+                className="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-3 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div className="sm:col-span-2">
+            <label htmlFor="phone-number" className="block text-sm font-semibold leading-6 text-white">
+              Phone number
+            </label>
+            <div className="mt-2.5">
+              <input
+                type="tel"
+                name="phone-number"
+                id="phone-number"
+                autoComplete="tel"
+                className="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-3 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div className="sm:col-span-2">
+            <label htmlFor="message" className="block text-sm font-semibold leading-6 text-white">
+              Message
+            </label>
+            <div className="mt-2.5">
+              <textarea
+                name="message"
+                id="message"
+                rows={4}
+                className="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-3 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
+                defaultValue={''}
+              />
+            </div>
+          </div>
+        </div>
+        <div className="mt-10">
+          <button
+            type="submit"
+            className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Let's talk
+          </button>
+        </div>
+      </form>
     </div>
 
     {/* フッター */}

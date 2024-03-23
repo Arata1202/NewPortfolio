@@ -2,7 +2,7 @@ import { EnvelopeIcon, PhoneIcon, ChevronDownIcon } from '@heroicons/react/20/so
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition, Dialog } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
-import { Bars3Icon, BellIcon, XMarkIcon, CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, BellIcon, XMarkIcon, CheckCircleIcon, ExclamationTriangleIcon, PencilIcon } from '@heroicons/react/24/outline'
 import React, { useState, useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { InboxIcon, TrashIcon, UsersIcon } from '@heroicons/react/24/outline'
@@ -94,7 +94,7 @@ export default function TopPage() {
       message: formData.message,
     };
 
-    emailjs.send(process.env.REACT_APP_SERVICE as string, process.env.REACT_APP_TEMPLATE as string, formDataAsRecord, process.env.REACT_APP_USER as string)
+    emailjs.send(process.env.REACT_APP_CONTACT_SERVICE_ID as string, process.env.REACT_APP_CONTACT_TEMPLATE_ID as string, formDataAsRecord, process.env.REACT_APP_CONTACT_USER_ID as string)
       .then((result) => {
         console.log('送信できた!', result.text);
         setContactConfirmShow(true);
@@ -249,11 +249,19 @@ export default function TopPage() {
               <span>GitHub</span>
             </a>
             <a
-              href="mailto:s13202200279@toyo.jp"
+              href={`mailto:${process.env.REACT_APP_MY_EMAIL_ADDRESS}`}
               className="inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >
               <EnvelopeIcon className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
               <span>E-mail</span>
+            </a>
+            <a
+              target='brank'
+              href={process.env.REACT_APP_MY_BLOG_URL}
+              className="inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
+            >
+              <PencilIcon className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
+              <span>Blog</span>
             </a>
             </div>
           </div>
@@ -425,6 +433,26 @@ export default function TopPage() {
               </div>
             ))}
           </dl>
+              <p className='text-white'>
+                インターン応募の際には、Trip Pulse X（後述）とDjangoをAWS EC2にデプロイしたポートフォリオ（FirstPortfolio）を制作しました。
+              </p>
+          <div className="mt-10 flex">
+          <a
+              target='brank'
+              href="https://portfolio.aratasportfolio.com/portfolio.html"
+              className="rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
+            >
+              FirstPortfolio
+          </a>
+          <a
+              target='branck'
+              href="https://github.com/Arata1202/FirstPortfolio"
+              className="ml-5 inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
+            >
+              <FaGithub className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
+              <span>GitHub</span>
+          </a>
+          </div>
         </div>
       <hr className="border-b border-8 border-dashed border-gray-700 mt-20" />
       </div>
@@ -445,7 +473,7 @@ export default function TopPage() {
           <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>
-                ※ インターンシップ応募の際に作成
+                ※ インターンシップ応募前に作成｜2023年 8月 〜 9月
               </p>
             </div>
           </div>
@@ -474,7 +502,7 @@ export default function TopPage() {
               </p>
               <br />
               <p>
-                メールアドレス：guest@guest.com, パスワード:Guest123 でログイン可能です。
+                メールアドレス：guest@guest.com, &nbsp;パスワード：Guest123 でログイン可能です。
               </p>
             </div>
           </div>
@@ -502,6 +530,13 @@ export default function TopPage() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
           <h1 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-2xl">Portfolio</h1>
+          <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
+            <div>
+                <p>
+                  ※ インターンシップ参加後に作成｜2024年 3月 〜
+                </p>
+            </div>
+          </div>
           <div className="relative overflow-hidden pt-5 lg:pt-10">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <img

@@ -256,7 +256,7 @@ export default function TopPage() {
               <span>E-mail</span>
             </a>
             <a
-              target='brank'
+              target='blank'
               href={process.env.REACT_APP_MY_BLOG_URL}
               className="inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >

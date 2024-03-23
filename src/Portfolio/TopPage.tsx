@@ -1,14 +1,16 @@
 import { EnvelopeIcon, PhoneIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Disclosure, Menu, Transition, Dialog } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import React, { useState, useEffect } from 'react';
+import { Bars3Icon, BellIcon, XMarkIcon, CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import React, { useState, useEffect, useRef } from 'react';
+import { useForm } from 'react-hook-form';
 import { InboxIcon, TrashIcon, UsersIcon } from '@heroicons/react/24/outline'
 import { FaGithub } from 'react-icons/fa';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
+import emailjs from 'emailjs-com';
 
 import { frontend, backend, tools } from '../Components/Skills'
 import { footerNavigation } from '../Components/FooterNav'
@@ -58,7 +60,61 @@ export default function TopPage() {
     }
   }, [lastScrollY]);
 
-  const [agreed, setAgreed] = useState(false)
+  const [show, setContactConfirmShow] = useState(false)
+  const cancelButtonRef = useRef(null)
+
+  //バリデーション
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
+
+  interface FormData {
+    sei: string;
+    mei: string;
+    email: string;
+    company: string;
+    tel: string;
+    message: string;
+  }
+
+  const [formData, setContactFormData] = useState<FormData | null>(null);
+  const [open, setContactDialogOpen] = useState(false);
+
+  const onSubmit = (data: FormData) => {
+    setContactFormData(data);
+    setContactDialogOpen(true);
+  };
+
+  const sendEmail = () => {
+    if (!formData) return;
+    const formDataAsRecord: Record<string, unknown> = {
+      sei: formData.sei,
+      mei: formData.mei,
+      email: formData.email,
+      company: formData.company,
+      tel: formData.tel,
+      message: formData.message,
+    };
+
+    emailjs.send(process.env.REACT_APP_SERVICE as string, process.env.REACT_APP_TEMPLATE as string, formDataAsRecord, process.env.REACT_APP_USER as string)
+      .then((result) => {
+        console.log('送信できた!', result.text);
+        setContactConfirmShow(true);
+        reset();
+      }, (error) => {
+        console.log('Failed to send email:', error.text);
+        setContactConfirmShow(false);
+      }).finally(() => {
+        setContactDialogOpen(false);
+      });
+  };
+
+  const handleConfirmSend = () => {
+    sendEmail();
+  };
+  const handleCancel = () => {
+    setContactDialogOpen(false);
+  };
+  
+
   return (
 
     // ナビゲーション
@@ -100,6 +156,12 @@ export default function TopPage() {
                       className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
                       Skills
+                    </a>
+                    <a
+                      href="#Contact"
+                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >
+                      Contact
                     </a>
                   </div>
                 </div>
@@ -150,6 +212,13 @@ export default function TopPage() {
               >
                 Skills
               </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="#Contact"
+                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >
+                Contact
+              </Disclosure.Button>
             </div>
           </Disclosure.Panel>
         </>
@@ -172,6 +241,7 @@ export default function TopPage() {
             </div>
             <div className="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
             <a
+              target='brank'
               href="https://github.com/Arata1202"
               className="inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >
@@ -192,8 +262,8 @@ export default function TopPage() {
               <p>
               千葉県在住の20歳（2003年4月20日生まれ）。
               2023年7月からプログラミングを独学し、１ヶ月でPHPを習得。
-              10月からはエンジニアのインターンシップに参加し、日々スキルアップを図っています。
-              2023年の8月には、大学生活やプログラミングに関するブログを開始しました。
+              同年10月からはエンジニアのインターンシップに参加し、日々スキルアップを図っています。
+              同年の8月には、大学生活やプログラミングに関するブログを開始しました。
               大学で学んでいるマーケティングスキルを活かして、人々のニーズやSEOを考えながら記事を執筆しています。
               よろしくお願いします。
               </p>
@@ -532,7 +602,7 @@ export default function TopPage() {
 
     {/* 問い合わせ */}
 
-    <div className="isolate bg-gray-800 px-6 py-10 sm:py-10 lg:px-8">
+    <div id="Contact" className="isolate bg-gray-800 px-6 py-10 sm:py-10 lg:px-8">
       <div
         className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
         aria-hidden="true"
@@ -543,90 +613,114 @@ export default function TopPage() {
         <p className="mt-2 text-lg leading-8 text-white">
         </p>
       </div>
-      <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+      <form  onSubmit={handleSubmit(onSubmit)} method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
           <div>
             <label htmlFor="first-name" className="block text-sm font-semibold leading-6 text-white">
-              First name
+              姓
             </label>
             <div className="mt-2.5">
               <input
+                {...register("sei", { required: "※ 姓を入力してください" })}
                 type="text"
-                name="first-name"
-                id="first-name"
+                name="sei"
+                id="sei"
                 autoComplete="given-name"
                 className="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-3 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
               />
+              {errors.sei && <p className="text-red-500">{errors.sei.message}</p>}
             </div>
           </div>
           <div>
             <label htmlFor="last-name" className="block text-sm font-semibold leading-6 text-white">
-              Last name
+              名
             </label>
             <div className="mt-2.5">
               <input
+                {...register("mei", { required: "※ 名を入力してください" })}
                 type="text"
-                name="last-name"
-                id="last-name"
+                name="mei"
+                id="mei"
                 autoComplete="family-name"
                 className="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-3 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
               />
+              {errors.mei && <p className="text-red-500">{errors.mei.message}</p>}
             </div>
           </div>
           <div className="sm:col-span-2">
             <label htmlFor="company" className="block text-sm font-semibold leading-6 text-white">
-              Company
+              企業名
             </label>
             <div className="mt-2.5">
               <input
+                {...register("company", { required: "※ 企業名を入力してください" })}
                 type="text"
                 name="company"
                 id="company"
                 autoComplete="organization"
                 className="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-3 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
               />
+              {errors.company && <p className="text-red-500">{errors.company.message}</p>}
             </div>
           </div>
           <div className="sm:col-span-2">
             <label htmlFor="email" className="block text-sm font-semibold leading-6 text-white">
-              Email
+              メールアドレス
             </label>
             <div className="mt-2.5">
               <input
-                type="email"
+                {...register("email", { 
+                  required: "※ メールアドレスを入力してください",
+                  pattern: {
+                    value: /^\S+@\S+$/i,
+                    message: "※ 有効なメールアドレスを入力してください"
+                  }
+                })}
+                type="text"
                 name="email"
                 id="email"
                 autoComplete="email"
                 className="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-3 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
               />
+              {errors.email && <p className="text-red-500">{errors.email.message}</p>}
             </div>
           </div>
           <div className="sm:col-span-2">
             <label htmlFor="phone-number" className="block text-sm font-semibold leading-6 text-white">
-              Phone number
+              電話番号
             </label>
             <div className="mt-2.5">
               <input
+                {...register("tel", {
+                  required: "※ 電話番号を入力してください",
+                  pattern: {
+                    value: /^\d+$/,
+                    message: "※ 有効な電話番号を入力してください",
+                  },
+                })}
                 type="tel"
-                name="phone-number"
-                id="phone-number"
+                name="tel"
+                id="tel"
                 autoComplete="tel"
                 className="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-3 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
               />
+              {errors.tel && <p className="text-red-500">{errors.tel.message}</p>}
             </div>
           </div>
           <div className="sm:col-span-2">
             <label htmlFor="message" className="block text-sm font-semibold leading-6 text-white">
-              Message
+              内容
             </label>
             <div className="mt-2.5">
               <textarea
+                {...register("message", { required: "※ 内容を入力してください" })}
                 name="message"
                 id="message"
                 rows={4}
                 className="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-3 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
                 defaultValue={''}
               />
+              {errors.message && <p className="text-red-500">{errors.message.message}</p>}
             </div>
           </div>
         </div>
@@ -635,11 +729,132 @@ export default function TopPage() {
             type="submit"
             className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Let's talk
+            送信
           </button>
         </div>
       </form>
     </div>
+
+    {/* 送信確認モーダル */}
+
+    <Transition.Root show={open} as={Fragment}>
+      <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setContactDialogOpen}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+        </Transition.Child>
+
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              enterTo="opacity-100 translate-y-0 sm:scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+              leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            >
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
+                <div className="sm:flex sm:items-start">
+                  <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-indigo-100 sm:mx-0 sm:h-10 sm:w-10">
+                    <EnvelopeIcon className="h-6 w-6 text-indigo-600" aria-hidden="true" />
+                  </div>
+                  <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                    <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
+                      お問い合わせを送信しますか？
+                    </Dialog.Title>
+                    <div className="mt-2">
+                      <p className="text-sm text-gray-500">
+                        お問い合わせの内容は、ポートフォリオの作成者にのみ共有されます。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
+                  <button
+                    type="button"
+                    className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                    onClick={handleCancel}
+                    ref={cancelButtonRef}
+                  >
+                    キャンセル
+                  </button>
+                  <button
+                    type="button"
+                    className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                    onClick={handleConfirmSend}
+                  >
+                    送信
+                  </button>
+                </div>
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
+        </div>
+      </Dialog>
+    </Transition.Root>
+
+    {/* 送信完了アラート */}
+
+    <>
+      {/* Global notification live region, render this permanently at the end of the document */}
+      <div
+        style={{ 
+          top: headerStyle.transform === 'translateY(0)' ? '3rem' : '-1rem',
+          transition: 'top 0.3s',
+        }}
+        aria-live="assertive"
+        className="pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6"
+      >
+        <div className="flex w-full flex-col items-center space-y-4 sm:items-end">
+          {/* Notification panel, dynamically insert this into the live region when it needs to be displayed */}
+          <Transition
+            show={show}
+            as={Fragment}
+            enter="transform ease-out duration-300 transition"
+            enterFrom="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
+            enterTo="translate-y-0 opacity-100 sm:translate-x-0"
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+              <div className="p-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <CheckCircleIcon className="h-6 w-6 text-green-400" aria-hidden="true" />
+                  </div>
+                  <div className="ml-3 w-0 flex-1 pt-0.5">
+                    <p className="text-sm font-medium text-gray-900">お問い合わせありがとうございます</p>
+                    <p className="mt-1 text-sm text-gray-500">数日以内にご連絡いたしますので、しばらくお待ちください。</p>
+                  </div>
+                  <div className="ml-4 flex flex-shrink-0">
+                    <button
+                      type="button"
+                      className="inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                      onClick={() => {
+                        setContactConfirmShow(false)
+                      }}
+                    >
+                      <span className="sr-only">Close</span>
+                      <XMarkIcon className="h-5 w-5" aria-hidden="true" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Transition>
+        </div>
+      </div>
+    </>
 
     {/* フッター */}
     
@@ -656,7 +871,7 @@ export default function TopPage() {
         </nav>
         <div className="mt-10 flex justify-center space-x-10">
           {footerNavigation.social.map((item) => (
-            <a key={item.name} href={item.href} className="text-white hover:text-gray-500">
+            <a key={item.name} href={item.href} target='brank' className="text-white hover:text-gray-500">
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </a>

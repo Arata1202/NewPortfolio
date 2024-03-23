@@ -4,11 +4,12 @@ export const footerNavigation = {
       { name: 'Activities', href: '#Activities' },
       { name: 'Services', href: '#Service' },
       { name: 'Skills', href: '#Skills' },
+      { name: 'Contact', href: '#Contact' },
     ],
     social: [
       {
         name: 'GitHub',
-        href: '#',
+        href: 'https://github.com/Arata1202',
         icon: (props: React.SVGProps<SVGSVGElement>) => (
           <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
             <path

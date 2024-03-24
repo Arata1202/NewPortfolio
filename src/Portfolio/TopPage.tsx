@@ -131,7 +131,7 @@ export default function TopPage() {
 
     <div className="bg-gray-800">
         <Disclosure as="nav" className="fixed top-0 w-full z-50 bg-gray-800" style={{...headerStyle, boxShadow: '0 8px 12px -4px rgba(255, 255, 255, 0.1), 0 4px 8px -4px rgba(255, 255, 255, 0.06)'}}>
-      {({ open }) => (
+      {({ open, close }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
@@ -150,6 +150,9 @@ export default function TopPage() {
                     </button>
                     <Link to="Activities" smooth={true} duration={500} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
                       Activities
+                    </Link>
+                    <Link to="Internship" smooth={true} duration={500} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                      Internship
                     </Link>
                     <Link to="Service" smooth={true} duration={500} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
                       Services
@@ -180,26 +183,38 @@ export default function TopPage() {
 
           <Disclosure.Panel as="nav" className="fixed top-16 w-full z-40 bg-gray-800" style={{...headerStyle, boxShadow: '0 8px 12px -4px rgba(255, 255, 255, 0.1), 0 4px 8px -4px rgba(255, 255, 255, 0.06)'}}>
             <div className="space-y-1 px-2 pb-3 pt-1">
-              {/* Home ボタン */}
               <button
-                onClick={scrollToTop}
+                onClick={() => {
+                  scrollToTop();
+                  close();
+                }}
                 className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Home
               </button>
-              {/* 他のセクションへのリンク */}
               <Link
                 to="Activities"
                 smooth={true}
                 duration={500}
+                onClick={() => close()}
                 className="block cursor-pointer rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Activities
               </Link>
               <Link
+                to="Internship"
+                smooth={true}
+                duration={500}
+                onClick={() => close()}
+                className="block cursor-pointer rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              >
+                Internship
+              </Link>
+              <Link
                 to="Service"
                 smooth={true}
                 duration={500}
+                onClick={() => close()}
                 className="block cursor-pointer rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Services
@@ -208,6 +223,7 @@ export default function TopPage() {
                 to="Skills"
                 smooth={true}
                 duration={500}
+                onClick={() => close()}
                 className="block cursor-pointer rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Skills
@@ -216,6 +232,7 @@ export default function TopPage() {
                 to="Contact"
                 smooth={true}
                 duration={500}
+                onClick={() => close()}
                 className="block cursor-pointer rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Contact
@@ -416,7 +433,7 @@ export default function TopPage() {
               </div>
             ))}
           </dl>
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-1">
+          {/* <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-1">
             {interns.map((intern) => (
               <div key={intern.name} className="flex flex-col mt-20">
                 <dt className="font-semibold leading-7 text-white text-2xl">
@@ -453,7 +470,7 @@ export default function TopPage() {
               <FaGithub className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
               <span>GitHub</span>
           </a>
-          </div>
+          </div> */}
         </div>
       <hr className="border-b border-8 border-dashed border-gray-700 mt-20" />
       </div>
@@ -928,6 +945,11 @@ export default function TopPage() {
           <div className="pb-6 text-center">
             <Link to="Activities" smooth={true} duration={500} className="cursor-pointer text-sm leading-6 text-white hover:text-gray-900">
               Activities
+            </Link>
+          </div>
+          <div className="pb-6 text-center">
+            <Link to="Internship" smooth={true} duration={500} className="cursor-pointer text-sm leading-6 text-white hover:text-gray-900">
+              Internship
             </Link>
           </div>
           <div className="pb-6 text-center">

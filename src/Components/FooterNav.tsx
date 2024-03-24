@@ -1,11 +1,4 @@
 export const footerNavigation = {
-    main: [
-      { name: 'Home', href: '/' },
-      { name: 'Activities', href: '#Activities' },
-      { name: 'Services', href: '#Service' },
-      { name: 'Skills', href: '#Skills' },
-      { name: 'Contact', href: '#Contact' },
-    ],
     social: [
       {
         name: 'GitHub',

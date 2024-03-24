@@ -1,8 +1,8 @@
-import { EnvelopeIcon, PhoneIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
+import { EnvelopeIcon, PhoneIcon, ChevronDownIcon, PencilIcon, DocumentMagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition, Dialog } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
-import { Bars3Icon, BellIcon, XMarkIcon, CheckCircleIcon, ExclamationTriangleIcon, PencilIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, BellIcon, XMarkIcon, CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import React, { useState, useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-scroll';
@@ -136,9 +136,9 @@ export default function TopPage() {
           <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div>
-                <a href="/">
+                <a onClick={scrollToTop}>
                 {/* <h2 className='text-white text-4xl'>Real Portfolio</h2> */}
-                <img src="images/リアルポートフォリオ.png" alt="トップページへ" loading="lazy" className='md:w-1/2 lg:w-2/5 ml-2' />
+                <img src="images/リアルポートフォリオ.png" alt="トップページへ" loading="lazy" className='md:w-1/2 lg:w-3/7 ml-2' />
                 </a>
               </div>
               <div className="flex items-center px-2 lg:px-0">
@@ -246,7 +246,7 @@ export default function TopPage() {
     {/* トップ */}
 
       <div className='pt-10 mt-5 flex'>
-      <img src="/images/engel.jpg" alt="description" loading="lazy" />
+        <img src="/images/engel.jpg" alt="description" loading="lazy" />
       </div>
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
@@ -278,7 +278,7 @@ export default function TopPage() {
               href={process.env.REACT_APP_MY_BLOG_URL}
               className="inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >
-              <PencilIcon className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
+              <DocumentMagnifyingGlassIcon className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
               <span>Blog</span>
             </a>
             </div>
@@ -508,7 +508,15 @@ export default function TopPage() {
               </div>
             </div>
           </div>
-          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">HTML｜CSS｜PHP｜JavaScript｜jQuery｜MySQL｜FTP</h1>
+          <div className="mt-5 flex flex-wrap">
+            <span className="mt-1 bg-orange-500 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">HTML</span>
+            <span className="mt-1 bg-blue-500 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">CSS</span>
+            <span className="mt-1 bg-purple-500 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">PHP</span>
+            <span className="mt-1 bg-yellow-300 text-gray-800 font-semibold mr-2 px-2.5 py-0.5 rounded">JavaScript</span>
+            <span className="mt-1 bg-blue-800 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">jQuery</span>
+            <span className="mt-1 bg-blue-600 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">MySQL</span>
+            <span className="mt-1 bg-gray-500 text-white font-semibold px-2.5 py-0.5 rounded">FTP</span>
+          </div>
           <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>
@@ -568,7 +576,12 @@ export default function TopPage() {
               </div>
             </div>
           </div>
-          <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-2xl">TypeScript｜React.js｜Tailwind CSS｜AWS Amplify</h1>
+          <div className="mt-5 flex flex-wrap">
+            <span className="mt-1 bg-blue-500 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">TypeScript</span>
+            <span className="mt-1 bg-blue-700 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">React.js</span>
+            <span className="mt-1 bg-indigo-500 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">Tailwind CSS</span>
+            <span className="mt-1 bg-orange-600 text-white font-semibold px-2.5 py-0.5 rounded">AWS Amplify</span>
+          </div>
           <div className="mt-5 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-white lg:max-w-none lg:grid-cols-1">
             <div>
               <p>

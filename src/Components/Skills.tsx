@@ -18,6 +18,12 @@ export const frontend = [
         '/images/Skills/3.jpg',
     },
     {
+      name: 'TypeScript',
+      title: 'このポートフォリオを作成する際に、フロントエンドとして採用しました。',
+      imageUrl:
+        '/images/Skills/20.jpg',
+    },
+    {
       name: 'jQuery',
       title: 'Ajaxなどの非同期通信や、slickなどのライブラリに使用しました。',
       imageUrl:
@@ -61,12 +67,6 @@ export const backend = [
       title: '使用頻度は少ないですが、APIを使用したスクリプトなども記述できます。',
       imageUrl:
         '/images/Skills/7.jpg',
-    },
-    {
-      name: 'TypeScript',
-      title: 'このポートフォリオを作成する際に、バックエンドとして採用しました。',
-      imageUrl:
-        '/images/Skills/20.jpg',
     },
     {
       name: 'Laravel',

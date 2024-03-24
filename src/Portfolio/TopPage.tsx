@@ -5,6 +5,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Bars3Icon, BellIcon, XMarkIcon, CheckCircleIcon, ExclamationTriangleIcon, PencilIcon } from '@heroicons/react/24/outline'
 import React, { useState, useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-scroll';
 import { InboxIcon, TrashIcon, UsersIcon } from '@heroicons/react/24/outline'
 import { FaGithub } from 'react-icons/fa';
 import "slick-carousel/slick/slick.css";
@@ -22,6 +23,7 @@ function classNames(...classes: string[]) {
   }
 
 export default function TopPage() {
+
   const [lastScrollY, setLastScrollY] = useState(0);
   const [headerStyle, setHeaderStyle] = useState({
     transform: 'translateY(0)',
@@ -62,6 +64,14 @@ export default function TopPage() {
 
   const [show, setContactConfirmShow] = useState(false)
   const cancelButtonRef = useRef(null)
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  
 
   //バリデーション
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>();
@@ -135,34 +145,21 @@ export default function TopPage() {
                 <div className="hidden lg:ml-6 lg:block">
                   <div className="flex space-x-4">
                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                    <a href="/" 
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
+                    <button onClick={scrollToTop} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
                       Home
-                    </a>
-                    <a
-                      href="#Activities"
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                    >
+                    </button>
+                    <Link to="Activities" smooth={true} duration={500} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
                       Activities
-                    </a>
-                    <a
-                      href="#Service"
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                    >
+                    </Link>
+                    <Link to="Service" smooth={true} duration={500} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
                       Services
-                    </a>
-                    <a
-                      href="#Skills"
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                    >
+                    </Link>
+                    <Link to="Skills" smooth={true} duration={500} className="cursor-pointer rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
                       Skills
-                    </a>
-                    <a
-                      href="#Contact"
-                      className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                    >
+                    </Link>
+                    <Link to="Contact" smooth={true} duration={500} className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
                       Contact
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -183,42 +180,46 @@ export default function TopPage() {
 
           <Disclosure.Panel as="nav" className="fixed top-16 w-full z-40 bg-gray-800" style={{...headerStyle, boxShadow: '0 8px 12px -4px rgba(255, 255, 255, 0.1), 0 4px 8px -4px rgba(255, 255, 255, 0.06)'}}>
             <div className="space-y-1 px-2 pb-3 pt-1">
-              {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-              <Disclosure.Button
-                as="a"
-                href="/"
+              {/* Home ボタン */}
+              <button
+                onClick={scrollToTop}
                 className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Home
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#Activities"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              </button>
+              {/* 他のセクションへのリンク */}
+              <Link
+                to="Activities"
+                smooth={true}
+                duration={500}
+                className="block cursor-pointer rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Activities
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#Service"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              </Link>
+              <Link
+                to="Service"
+                smooth={true}
+                duration={500}
+                className="block cursor-pointer rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Services
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#Skills"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              </Link>
+              <Link
+                to="Skills"
+                smooth={true}
+                duration={500}
+                className="block cursor-pointer rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Skills
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#Contact"
-                className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+              </Link>
+              <Link
+                to="Contact"
+                smooth={true}
+                duration={500}
+                className="block cursor-pointer rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
               >
                 Contact
-              </Disclosure.Button>
+              </Link>
             </div>
           </Disclosure.Panel>
         </>
@@ -894,19 +895,61 @@ export default function TopPage() {
     {/* フッター */}
     
     <footer className="bg-gray-800 z-50 mt-20" style={{ boxShadow: '0 -8px 12px -4px rgba(255, 255, 255, 0.1), 0 -8px 12px -4px rgba(255, 255, 255, 0.06)' }}>
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-5 sm:py-10 lg:px-8">
-        <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
-          {footerNavigation.main.map((item) => (
-            <div key={item.name} className="pb-6 text-center">
-              <a href={item.href} className="text-sm leading-6 text-white hover:text-gray-900">
-                {item.name}
-              </a>
+        {/* 検索 */}
+        {/* <div className="mx-auto mt-16 max-w-xl sm:mt-20 pr-6 pl-6 lg:pr-0 lg:pl-0">
+        <form>
+          <div className="w-full pt-10">
+            <label htmlFor="search" className="sr-only">
+                Search
+            </label>
+            <div className="relative">
+              <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+              </div>
+              <input
+                id="search"
+                name="search"
+                className="block w-full rounded-md border-0 bg-gray-700 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-white focus:text-gray-900 focus:ring-0 focus:placeholder:text-gray-500 sm:text-sm sm:leading-6"
+                placeholder="Search"
+                type="search"
+              />
             </div>
-          ))}
+          </div>
+        </form>
+        </div> */}
+        {/* ここまで */}
+      <div className="pt-10 mx-auto max-w-7xl overflow-hidden px-6 py-5 sm:py-10 lg:px-8">
+        <nav className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
+          <div className="pb-6 text-center">
+            <button onClick={scrollToTop} className="text-sm leading-6 text-white hover:text-gray-900">
+              Home
+            </button>
+          </div>
+          <div className="pb-6 text-center">
+            <Link to="Activities" smooth={true} duration={500} className="cursor-pointer text-sm leading-6 text-white hover:text-gray-900">
+              Activities
+            </Link>
+          </div>
+          <div className="pb-6 text-center">
+            <Link to="Service" smooth={true} duration={500} className="cursor-pointer text-sm leading-6 text-white hover:text-gray-900">
+              Services
+            </Link>
+          </div>
+          <div className="pb-6 text-center">
+            <Link to="Skills" smooth={true} duration={500} className="cursor-pointer text-sm leading-6 text-white hover:text-gray-900">
+              Skills
+            </Link>
+          </div>
+          <div className="pb-6 text-center">
+            <Link to="Contact" smooth={true} duration={500} className="cursor-pointer text-sm leading-6 text-white hover:text-gray-900">
+              Contact
+            </Link>
+          </div>
         </nav>
         <div className="mt-10 flex justify-center space-x-10">
+          {/* ソーシャルリンクは変更なし */}
           {footerNavigation.social.map((item) => (
-            <a key={item.name} href={item.href} target='brank' className="text-white hover:text-gray-500">
+            <a key={item.name} href={item.href} target='blank' className="text-white hover:text-gray-500">
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </a>
@@ -914,6 +957,7 @@ export default function TopPage() {
         </div>
       </div>
     </footer>
+
     </div>
   )
 }

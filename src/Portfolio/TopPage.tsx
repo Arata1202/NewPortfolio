@@ -668,16 +668,10 @@ export default function TopPage() {
 
     {/* 問い合わせ */}
 
-    <div id="Contact" className="isolate bg-gray-800 px-6 py-10 sm:py-10 lg:px-8">
-      <div
-        className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
-        aria-hidden="true"
-      >
-      </div>
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="mt-6 text-3xl font-bold tracking-tight text-white sm:text-4xl">Contact</h2>
-        <p className="mt-2 text-lg leading-8 text-white">
-        </p>
+    <div id="Contact" className="bg-gray-800 py-0 sm:py-10">
+    <div className="mx-auto max-w-7xl text-center px-6 lg:px-8">
+      <div>
+        <h2 className="mt-10 text-3xl font-bold tracking-tight text-white sm:text-4xl">Contact</h2>
       </div>
       <form  onSubmit={handleSubmit(onSubmit)} method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
         <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
@@ -687,6 +681,7 @@ export default function TopPage() {
             </label>
             <div className="mt-2.5">
               <input
+                placeholder='山田'
                 {...register("sei", { required: "※ 姓を入力してください" })}
                 type="text"
                 name="sei"
@@ -703,6 +698,7 @@ export default function TopPage() {
             </label>
             <div className="mt-2.5">
               <input
+                placeholder='太郎'
                 {...register("mei", { required: "※ 名を入力してください" })}
                 type="text"
                 name="mei"
@@ -719,6 +715,7 @@ export default function TopPage() {
             </label>
             <div className="mt-2.5">
               <input
+                placeholder='株式会社ハウコレ'
                 {...register("company", { required: "※ 企業名を入力してください" })}
                 type="text"
                 name="company"
@@ -735,6 +732,7 @@ export default function TopPage() {
             </label>
             <div className="mt-2.5">
               <input
+                placeholder='example@example.com'
                 {...register("email", { 
                   required: "※ メールアドレスを入力してください",
                   pattern: {
@@ -757,6 +755,7 @@ export default function TopPage() {
             </label>
             <div className="mt-2.5">
               <input
+                placeholder='080-1234-5678'
                 {...register("tel", {
                   required: "※ 電話番号を入力してください",
                   pattern: {
@@ -779,6 +778,7 @@ export default function TopPage() {
             </label>
             <div className="mt-2.5">
               <textarea
+                placeholder='お問い合わせです。'
                 {...register("message", { required: "※ 内容を入力してください" })}
                 name="message"
                 id="message"
@@ -799,6 +799,7 @@ export default function TopPage() {
           </button>
         </div>
       </form>
+      </div>
     </div>
 
     {/* 送信確認モーダル */}

@@ -516,6 +516,80 @@ export default function TopPage() {
       </div>
     </div>
 
+    {/* インターン */}
+    <div id="Internship" className="bg-gray-800 py-10 sm:py-10 mt-5">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <h2 className="mt-10 text-3xl font-bold tracking-tight text-white sm:text-4xl mb-20 text-center">Internship</h2>
+        <div className="mx-auto mt-16 max-w-none lg:mt-24">
+        <div className="mx-auto">
+            <article className="relative isolate flex flex-col gap-8 lg:flex-row">
+                <div className="relative aspect-[13/9] sm:aspect-[13/9] lg:w-80 lg:shrink-0">
+                  <img
+                    src="/images/カレンダー.jpg"
+                    alt=""
+                    className="absolute inset-0 h-full w-full bg-gray-50 object-cover"
+                  />
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+                </div>
+                <div>
+                  <div className="">
+                  <h1 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-2xl">
+                    日報管理ツール
+                  </h1>
+                  <p className='mb-2 mt-2 text-white'>取り組み日：2023年11月 〜</p>
+                  <div className="flex flex-wrap">
+                    <span className="mt-1 bg-red-600 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">Laravel</span>
+                    <span className="mt-1 bg-blue-400 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">Vuetify</span>
+                    <span className="mt-1 bg-green-700 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">Vue.js</span>
+                    <span className="mt-1 bg-indigo-500 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">Tailwind CSS</span>
+                    <span className="mt-1 bg-orange-600 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">AWS ECS</span>
+                  </div>
+                    <p className="mt-3 leading-6 text-white">
+                    訪問看護を提供する企業向けに、ゼロから共同で日報管理ツールを開発しました。
+                    管理者と一般社員でアクセスできる情報には差があります。
+                    このツールの主要機能には、顧客とスタッフのデータを一元管理する機能、これらのデータや日付、休日、雇用形態などを管理するためのマスタ画面の作成、訪問履歴やキャンセル者の入力画面、単価計算、およびレポート生成機能などが含まれています。
+                    初めはVue.jsで開発していましたが、途中でVuetifyに移行しました。
+                    
+                    </p>
+                  </div>
+                </div>
+              </article>
+              </div>
+        <div className="mt-10 mx-auto">
+            <article className="relative isolate flex flex-col gap-8 lg:flex-row">
+                <div className="relative aspect-[13/9] sm:aspect-[13/9] lg:w-80 lg:shrink-0">
+                  <img
+                    src="/images/ブログ.jpg"
+                    alt=""
+                    className="absolute inset-0 h-full w-full bg-gray-50 object-cover"
+                  />
+                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+                </div>
+                <div>
+                <div className="">
+                  <h1 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-2xl">
+                    CMS
+                  </h1>
+                  <p className='mb-2 mt-2 text-white'>取り組み日：2023年11月 〜</p>
+                  <div className="flex flex-wrap">
+                    <span className="mt-1 bg-red-600 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">Laravel</span>
+                    <span className="mt-1 bg-green-700 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">Vue.js</span>
+                    <span className="mt-1 bg-blue-500 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">CSS</span>
+                    <span className="mt-1 bg-orange-600 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">AWS ECS</span>
+                  </div>
+                    <p className="mt-5 leading-6 text-white">
+                    ハウコレが運営する5つのメディアサイト向けのCMSを共同で開発しています。私の主な業務は、ボタンやアフィリエイトタグなどの挿入機能を提供するプラグインのリファクタリングと、新たなメディアサイト用のCMS機能の開発です。
+                    このCMSは私がインターンシップを開始した時には既に構築されており、現在はそのアップデートや機能改善に取り組んでいます。
+                    </p>
+                  </div>
+                </div>
+              </article>
+              </div>
+        </div>
+      <hr className="border-b border-8 border-dashed border-gray-700 mt-20" />
+      </div>
+    </div>
+
 
     {/* サービス */}
 
@@ -656,7 +730,7 @@ export default function TopPage() {
     </div>
 
     {/* スキル */}
-    <div id="Skills" className="bg-gray-800 py-0 sm:py-10">
+    <div id="Skills" className="bg-gray-800 py-10 sm:py-10">
     <div className="mx-auto max-w-7xl text-center px-6 lg:px-8">
         <div>
           <h2 className="mt-10 text-3xl font-bold tracking-tight text-white sm:text-4xl">Skills</h2>
@@ -709,7 +783,7 @@ export default function TopPage() {
 
     {/* 問い合わせ */}
 
-    <div id="Contact" className="bg-gray-800 py-0 sm:py-10">
+    <div id="Contact" className="bg-gray-800 py-10 sm:py-10">
     <div className="mx-auto max-w-7xl text-center px-6 lg:px-8">
       <div>
         <h2 className="mt-10 text-3xl font-bold tracking-tight text-white sm:text-4xl">Contact</h2>

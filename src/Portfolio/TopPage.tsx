@@ -1,8 +1,8 @@
-import { EnvelopeIcon, PhoneIcon, ChevronDownIcon, PencilIcon, DocumentMagnifyingGlassIcon } from '@heroicons/react/20/solid'
+import { EnvelopeIcon, PhoneIcon, ChevronDownIcon, PencilIcon, DocumentMagnifyingGlassIcon, RocketLaunchIcon } from '@heroicons/react/20/solid'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition, Dialog } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
-import { Bars3Icon, BellIcon, XMarkIcon, CheckCircleIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, BellIcon, XMarkIcon, CheckCircleIcon, ExclamationTriangleIcon, PencilSquareIcon, CodeBracketSquareIcon } from '@heroicons/react/24/outline'
 import React, { useState, useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-scroll';
@@ -267,19 +267,19 @@ export default function TopPage() {
               <span>GitHub</span>
             </a>
             <a
-              href={`mailto:${process.env.REACT_APP_MY_EMAIL_ADDRESS}`}
-              className="inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
-            >
-              <EnvelopeIcon className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
-              <span>E-mail</span>
-            </a>
-            <a
               target='blank'
               href={process.env.REACT_APP_MY_BLOG_URL}
               className="inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >
               <DocumentMagnifyingGlassIcon className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
               <span>Blog</span>
+            </a>
+            <a
+              href={`mailto:${process.env.REACT_APP_MY_EMAIL_ADDRESS}`}
+              className="inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
+            >
+              <EnvelopeIcon className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
+              <span>E-mail</span>
             </a>
             </div>
           </div>
@@ -333,9 +333,12 @@ export default function TopPage() {
                   旅行
               </h2>
               <p className="mt-5 text-sm leading-6 text-white">旅行が好きで何度も温泉地や観光スポットへ行きました。思い出ができるだけでなく、土地勘や計画性の向上、コスト管理能力の上昇など得られるメリットも大きかったです。</p>
+              <div className="mt-5 flex flex-wrap">
+                <span className="mt-1 bg-blue-700 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">温泉</span>
+                <span className="mt-1 bg-green-700 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">観光</span>
+              </div>
             </div>
           </div>
-
           <div>
           <Slider {...settings}>
             <div className="relative w-full">
@@ -368,9 +371,12 @@ export default function TopPage() {
                   ドライブ
               </h2>
               <p className="mt-5 text-sm leading-6 text-white">レンタカーなどを使ってドライブすることも好きです。またドライブだけでなく、新幹線や飛行機に乗ってのんびり旅をすることも好きです。</p>
+              <div className="mt-5 flex flex-wrap">
+                <span className="mt-1 bg-red-600 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">新幹線</span>
+                <span className="mt-1 bg-purple-600 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">飛行機</span>
+              </div>
             </div>
           </div>
-
           <div>
           <Slider {...settings}>
             <div className="relative w-full">
@@ -403,6 +409,11 @@ export default function TopPage() {
                     ゲーム
               </h2>
               <p className="mt-5 text-sm leading-6 text-white">暇な日は自宅でゲームを楽しんでいます。また部屋をカスタマイズすることも好きで、そのおかげでプログラミングも捗っています。</p>
+              <div className="mt-5 flex flex-wrap">
+                <span className="mt-1 bg-indigo-600 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">PC</span>
+                <span className="mt-1 bg-yellow-600 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">Switch</span>
+              </div>
+
             </div>
             </div>
         </div>
@@ -413,25 +424,54 @@ export default function TopPage() {
     {/* 経験 */}
     <div id="Activities" className="bg-gray-800 py-10 sm:py-10 mt-5">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-      <h2 className="mt-10 text-3xl font-bold tracking-tight text-white sm:text-4xl mb-20 text-center">Activities</h2>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            {features.map((feature) => (
-              <div key={feature.name} className="flex flex-col">
-                <dt className="font-semibold leading-7 text-white text-2xl">
-                  <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
-                    <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
-                  </div>
-                  {feature.name}
-                </dt>
-                <dd className="mt-5 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto text-white">{feature.description}</p>
-                </dd>
-                <dd className="mt-5 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                  <p className="flex-auto text-white text-1xl text-bold">{feature.description_2}</p>
-                </dd>
+        <h2 className="mt-10 text-3xl font-bold tracking-tight text-white sm:text-4xl mb-20 text-center">Activities</h2>
+        <div className="mx-auto mt-16 max-w-none lg:mt-24">
+          <dl className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-3">
+            <div className="flex flex-col">
+              <dt className="font-semibold leading-7 text-white text-2xl">
+                <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                  <InboxIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                </div>
+                マーケティング研究
+              </dt>
+              <dd className="mt-5 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                <p className="flex-auto text-white">大学のゼミナールでは、企業の成長性や弱点を分析し、その将来性についてディベートを主に行いました。また、他大学と競うディベート大会にも参加しました。企業分析のスキルに加え、ディベートを通じて話術も磨くことができました。</p>
+              </dd>
+              <div className="mt-5 flex flex-wrap">
+                <span className="mt-1 bg-pink-500 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">企業分析</span>
+                <span className="mt-1 bg-indigo-500 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">ディベート</span>
               </div>
-            ))}
+            </div>
+            <div className="flex flex-col">
+              <dt className="font-semibold leading-7 text-white text-2xl">
+                <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                  <PencilSquareIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                </div>
+                ブログ運営
+              </dt>
+              <dd className="mt-5 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                <p className="flex-auto text-white">WordPressを利用して、大学生活やプログラミングに関するブログを運営しています。大学生時代に感じた不安やその解決策を他の学生に共有したいと考え、始めました。またブログを通じてライティングスキルやSEOに関する知識も身につけることができました。</p>
+              </dd>
+              <div className="mt-5 flex flex-wrap">
+                <span className="mt-1 bg-yellow-600 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">ブログ</span>
+                <span className="mt-1 bg-red-600 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">SEO</span>
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <dt className="font-semibold leading-7 text-white text-2xl">
+                <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                  <CodeBracketSquareIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                </div>
+                プログラミング学習
+              </dt>
+              <dd className="mt-5 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                <p className="flex-auto text-white">友人に勧められたことをきっかけに、独学でプログラミング学習を開始しました。私の長所である集中力を活かして勉強に励み、僅か１ヶ月でPHPを習得。その後はDjangoでポートフォリオを作成し、エンジニアインターンシップに応募しました。</p>
+              </dd>
+              <div className="mt-5 flex flex-wrap">
+                <span className="mt-1 bg-purple-500 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">PHP</span>
+                <span className="mt-1 bg-green-800 text-white font-semibold mr-2 px-2.5 py-0.5 rounded">Django</span>
+              </div>
+            </div>
           </dl>
           {/* <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-1">
             {interns.map((intern) => (
@@ -536,9 +576,10 @@ export default function TopPage() {
           <a
               target='brank'
               href="https://sns.aratasportfolio.com/Pages/Auth/login-1.php"
-              className="rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
+              className="inline-flex justify-center rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-white hover:bg-opacity-40"
             >
-              Trip Pulse X
+              <RocketLaunchIcon className="-ml-0.5 mr-1.5 h-5 w-5 text-white" aria-hidden="true" />
+              <span>Trip Pulse X</span>
           </a>
           <a
               target='branck'
